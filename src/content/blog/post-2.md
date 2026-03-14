@@ -1,70 +1,57 @@
 ---
-title: Building an Impressive Front-End Developer Portfolio
-excerpt: In the competitive world of front-end development, a strong portfolio is your ticket to showcasing your skills, making a lasting impression on potential employers or clients, and advancing your career.
-publishDate: 'October 5 2023'
+title: Inverser le temps pour cacher un secret - Voyage au cœur d’un coffre-fort multi-agents
+excerpt: Inverser le temps pour cacher un secret - Voyage au cœur d’un coffre-fort multi-agents
+publishDate: 'Feb 26 2026'
+isFeatured: true
 tags:
-  - Web
-  - Web development
+  - Cybersécurité
 seo:
   image:
-    src: '/post-2.jpg'
-    alt: Half open laptop on a desk
+    src: '/temporalBreach.webp'
+    alt: Brèche temporel
 ---
 
-![Half open laptop on a desk](/post-2.jpg)
+![Brèche temporel](/temporalBreach.webp)
 
-**Note:** This post was created using Chat GPT to demonstrate the features of the _[Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/)_.
+Imaginez que vous deviez cacher une bille d’or dans une piscine remplie de millions de billes de plastique identiques. C’est facile : n’importe qui peut plonger et la trouver.
 
-In the competitive world of front-end development, a strong portfolio is your ticket to showcasing your skills, making a lasting impression on potential employers or clients, and advancing your career. Your portfolio is your digital business card, and it should be a reflection of your talent, creativity, and expertise. In this post, we'll walk you through the steps to create an impressive front-end developer portfolio that will help you stand out in the crowd.
+Maintenant, imaginez que vous donnez un grand coup de pied dans la piscine, que vous mélangez tout, et qu’en plus, chaque bille change de place selon une danse mathématique précise que vous seul connaissez. Pour un observateur, la piscine est devenue un chaos total. Mais pour vous, il suffit de “rembobiner” le film pour que la bille d’or revienne exactement dans votre main.
 
-## 1. Showcase a Diverse Range of Projects
+C’est le cœur de mon projet : le **Temporal Breach Protocol**.
 
-Your portfolio should be a testament to your versatility. Include a variety of projects that demonstrate your skills in different areas of front-end development. Consider including projects like:
+## Le problème : Les serrures que l’on peut casser
 
-- **Responsive Websites:** Showcase your ability to create websites that adapt seamlessly to various screen sizes and devices.
+Aujourd’hui, la plupart de nos secrets (mots de passe, fichiers) sont protégés par des problèmes de mathématiques très difficiles, comme la factorisation de grands nombres. C’est solide… jusqu’à ce qu’un ordinateur quantique arrive et résolve le problème en un claquement de doigts.
 
-- **Interactive Web Applications:** Feature web applications that engage users with dynamic features and functionalities.
+J’ai voulu explorer une autre voie. Pas une équation, mais un **système dynamique**.
 
-- **E-commerce Websites:** If you've worked on e-commerce sites, include them to demonstrate your expertise in handling complex web development tasks.
+## Étape 1 : Le camouflage (L’injection)
 
-- **Open Source Contributions:** Highlight your involvement in open-source projects or contributions to online coding communities.
+Dans mon système, on commence par créer une grille géante de 4096 cases (un “Lattice”). On y cache notre secret — les “Agents Dorés” — à des endroits que vous seul connaissez. Tout le reste est rempli de bruit, de faux agents. À ce stade, le secret est là, mais il est noyé dans la foule.
 
-## 2. Highlight Your Coding Skills
+## Étape 2 : La “Moulinette” (Le Tissage)
 
-Your portfolio should provide a clear view of your coding proficiency. Consider the following:
+C’est ici que la magie opère. On applique deux couches de chaos :
 
-- **Clean and Organized Code:** Present your code in a clean and well-organized manner. Use proper indentation, comments, and coding standards.
+1. **Le Shuffling** : On téléporte chaque agent à l’autre bout de la grille selon une séquence ultra-complexe.
+2. **La Danse de Margolus** : On prend des petits carrés de 2x2 cases et on les fait pivoter. En alternant ces rotations, l’information finit par se disperser comme une goutte d’encre dans un verre d’eau.
+Après quelques tours, votre secret a disparu. Il n’est plus “quelque part”, il est “partout” et “nulle part” à la fois.
 
-- **Use of Version Control:** Showcase your use of version control systems like Git and GitHub to demonstrate your collaboration and code management skills.
+## Étape 3 : La Brèche Temporelle (Le déchiffrement)
 
-- **Code Samples:** Include snippets of code from your projects to give visitors an insight into your coding style and problem-solving abilities.
+C’est la partie Feynman : La nature est réversible. Si vous connaissez la danse exacte, vous pouvez inverser le sens de rotation des carrés et annuler les téléportations. En “remontant le temps” algorithmique, le chaos s’ordonne soudainement. Les agents dorés reprennent leur place initiale.
 
-## 3. Emphasize Responsive Design
+Une fois les bits récupérés, on les passe dans un moulinet final (SHA-256) pour obtenir la clé qui ouvre votre fichier AES-256.
 
-As a front-end developer, responsive design is paramount. Ensure that your portfolio itself is a shining example of responsive design. It should look and function flawlessly on a variety of devices, including desktops, tablets, and smartphones.
+## Pourquoi c’est important ? (Le futur Post-Quantique)
 
-## 4. User Experience (UX) Matters
+Ce qui est fascinant, c’est que ce chaos n’a pas de “point faible” mathématique. Un ordinateur quantique peut calculer vite, mais il ne peut pas “deviner” la structure du chaos sans connaître la clé de la danse. Mon PoC prouve que l’on peut obtenir une réversibilité de 100% : pas un seul bit n’est perdu dans la tempête.
 
-Front-end development is not just about writing code; it's about creating a great user experience. Explain your thought process behind the user interface (UI) and UX decisions you made in your projects. Discuss how you optimized performance and accessibility.
+## Conclusion : La science est un jeu d’enfant
 
-## 5. Document Your Projects
+Ce projet est une **Preuve de Concept (PoC)** académique. Ce n’est pas encore l’outil qui remplacera votre gestionnaire de mots de passe, mais c’est une démonstration que l’on peut construire des forteresses numériques en utilisant les lois du désordre et du temps.
 
-Accompany each project with a detailed description. Explain the project's goals, your role in it, the technologies and tools you used, and any challenges you overcame. This documentation provides context and depth to your work.
+Comme le disait Feynman : _“Ce que je ne peux pas créer, je ne le comprends pas.”_ En créant ce chaos et en apprenant à le dompter, on comprend un peu mieux comment protéger nos vies numériques demain.
 
-## 6. Regularly Update Your Portfolio
-
-A stagnant portfolio can give the impression of inactivity or lack of progress. Regularly update your portfolio with your latest work and projects. Remove outdated or less impressive work to keep your portfolio relevant and impactful.
-
-## 7. Test and Optimize Load Times
-
-Slow-loading websites can turn visitors away. Ensure your portfolio loads quickly by optimizing images and using proper techniques to minimize load times.
-
-## 8. Seek Feedback
-
-Before finalizing your portfolio, seek feedback from peers, mentors, or online communities. Constructive criticism can help you refine your portfolio and make it even more impressive.
-
-## 9. Personalize Your Portfolio
-
-Your portfolio is not just about your work; it's also about you. Add a personal touch by including an **"About Me"** section that tells your story, your passions, and what makes you unique as a front-end developer.
-
-Remember, your front-end developer portfolio is an ongoing project. Keep refining it, stay up-to-date with the latest trends, and let it evolve as your skills and experience grow. An impressive portfolio not only serves as a testament to your abilities but also opens doors to exciting opportunities in the world of front-end development.
+**Pour les curieux**: Si vous voulez voir le code, le diagramme ou lire le papier scientifique (avec toutes les équations mathématiques), j’ai tout mis en open-source sur mon GitHub.
+[https://github.com/martindufresne/poc-temporal-breach](https://github.com/martindufresne/poc-temporal-breach)

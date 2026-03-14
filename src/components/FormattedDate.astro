@@ -2,11 +2,12 @@
 type Props = { date: Date };
 
 const { date } = Astro.props;
+const lang = Astro.currentLocale || 'fr'; // Detect current language
 ---
 
 <time datetime={date.toISOString()}>
     {
-        date.toLocaleDateString('en-us', {
+        date.toLocaleDateString('fr-ca', {
             year: 'numeric',
             month: 'long',
             day: 'numeric'

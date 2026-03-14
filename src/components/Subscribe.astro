@@ -1,5 +1,5 @@
 ---
-import Button from './Button.astro';
+// import Button from './Button.astro';
 import siteConfig from '../data/site-config';
 
 const subscribe = siteConfig.subscribe;
@@ -16,7 +16,7 @@ const { class: className } = Astro.props;
                 </h2>
             )}
             {subscribe.text && <p class="w-full max-w-xl mb-8 text-sm leading-normal">{subscribe.text}</p>}
-            <form
+            <!-- <form
                 action={subscribe.formUrl}
                 method="post"
                 id="subscribe-form"
@@ -39,7 +39,7 @@ const { class: className } = Astro.props;
                 <Button type="submit" name="subscribe" class="w-full h-9 sm:w-auto">
                     Subscribe
                 </Button>
-            </form>
+            </form> -->
         </section>
     )
 }

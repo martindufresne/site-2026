@@ -1,14 +1,14 @@
 ---
-title: Get in touch
+title: Me contacter
 seo:
-  title: Contact
-  description: Get in touch through email or social media! Let me know how I can help.
+  title: Me contacter
+  description: N'hésitez pas à me contacter par courriel ou via les réseaux sociaux ! Dites-moi comment je peux vous aider.
 ---
 
-Thank you for reaching out! Whether you have a question, a suggestion, or just want to share your thoughts, I'm all ears. Feel free to get in touch through any of the methods below:
+Que vous ayez une question, une suggestion ou que vous souhaitiez collaborer avec moi, je suis à votre écoute. N'hésitez pas à me contacter par l'un des moyens suivants :
 
-_Email:_
-Feel free to drop me an email at [example@example.com](mailto:example@example.com), and I'll do my best to respond as soon as possible.
+_Courriel:_
+Écrivez-moi à [martindufresne@gmail.com](mailto:martindufresne@gmail.com) et je ferai de mon mieux pour vous répondre le plus rapidement possible.
 
-_Social Media:_
-Connect with me on social media as well. Find me on [Twitter](https://twitter.com) or [LinkedIn](https://www.linkedin.com/).
+_Média Sociaux:_
+Retrouvez-moi également sur les réseaux sociaux. Suivez-moi sur [Twitter/X](https://x.com/dufresne_martin), [Bluesky](https://bsky.app/profile/mdufresne.bsky.social), [Threads](https://www.threads.com/@martin_dufresne) ou [LinkedIn](https://www.linkedin.com/in/martin-dufresne-37aba229b/).
