@@ -1,0 +1,49 @@
+---
+const { class: className } = Astro.props;
+---
+
+<section class:list={['px-8 py-12 flex flex-col items-center border border-dashed border-main text-center sm:px-12 sm:py-16', className]}>
+    <h2 class="w-full max-w-xl text-2xl leading-tight font-serif font-medium sm:text-4xl mb-4">
+        Abonnez-vous à ma newsletter <br/> Out of the box
+    </h2>
+    <p class="w-full max-w-xl mb-8 text-sm leading-normal">
+        Recevez mes derniers articles et réflexions directement dans votre boîte mail.<br/>💡 Contenu 100% inédit, différent des articles du site.
+    </p>
+    <iframe name="substack-frame" class="hidden" aria-hidden="true"></iframe>
+    <form
+        id="newsletter-form"
+        action="https://martindufresne.substack.com/api/v1/free"
+        method="POST"
+        target="substack-frame"
+        class="w-full max-w-xl flex flex-col gap-3.5 sm:flex-row"
+    >
+        <label for="newsletter-email" class="sr-only">Adresse courriel</label>
+        <input
+            type="email"
+            name="email"
+            id="newsletter-email"
+            class="w-full h-9 px-5 py-2 text-sm text-main bg-transparent border border-main rounded-full placeholder:text-main/60 focus:outline-none"
+            required
+            placeholder="Votre courriel"
+        />
+        <button
+            type="submit"
+            class="inline-flex items-center justify-center px-6 py-2 font-serif leading-tight text-main bg-main border border-main rounded-full transition hover:bg-muted w-full h-9 sm:w-auto"
+        >
+            S'inscrire
+        </button>
+    </form>
+    <p id="newsletter-message" class="mt-4 text-sm hidden"></p>
+</section>
+
+<script>
+    const form = document.getElementById('newsletter-form') as HTMLFormElement;
+    const message = document.getElementById('newsletter-message') as HTMLElement;
+
+    form.addEventListener('submit', () => {
+        message.textContent = 'Merci ! Vérifiez votre boîte mail pour confirmer votre inscription.';
+        message.classList.remove('hidden');
+        message.classList.add('text-green-600');
+        setTimeout(() => form.reset(), 100);
+    });
+</script>
