@@ -10,17 +10,17 @@ seo:
 
 ![Alt text for image](/banner.jpg)
 
-## Martin Dufresne - Enseignant & Chercheur en R&D // Systèmes complexes & Morphogénèse
+## Martin Dufresne - Enseignant & Chercheur en R&D // Systèmes complexes & Morphogénèse logicielle
 
-**Bonjour!** Mon nom est Martin Dufresne. Mon travail s'articule autour d'une question centrale : comment la structure et la forme émergent-elles, que ce soit dans un algorithme quantique ou dans un système biologique ? À travers l'enseignement et la recherche, je tente de décoder ces mécanismes pour anticiper les infrastructures numériques de demain.
+**Bonjour!** Mon nom est Martin Dufresne. Mon travail s'articule autour d'une intuition centrale : et si nos logiciels n'étaient plus des structures rigides, mais des organismes capables de croître ? À l'intersection de l'IA agentique, de l'informatique quantique et de la cybersécurité, je développe des modèles où la forme et la fonction émergent de règles locales simples.
 
 ## Compétences et expertise
 
-Expertise hybride à l'intersection des systèmes complexes. J'évolue dans la transmission et l'architecture de solutions en Intelligence Artificielle, Informatique Quantique et Cybersécurité. Mon approche pédagogique se nourrit de la rigueur technique nécessaire pour sécuriser et optimiser les infrastructures numériques de demain.
+Enseigner la cybersécurité ou le quantique, c'est pour moi transmettre l'art de gérer l'imprévisible. J'accompagne la prochaine génération de spécialistes vers une vision critique des technologies : ne plus simplement utiliser l'outil, mais comprendre les lois de sa genèse pour mieux le sécuriser.
 
 ## Innovation et résolution de problèmes
 
-Ma démarche de R&D se concentre actuellement sur la morphogénèse synthétique. Je cherche à comprendre et à simuler la genèse des formes, en explorant comment les principes du vivant peuvent inspirer de nouvelles architectures algorithmiques. **Je ne me contente pas d'utiliser la technologie ; je questionne son évolution.**
+Ma recherche actuelle se concentre sur la Morphogenèse Logicielle. Plutôt que de bâtir des systèmes "Top-Down", je conçois des agents autonomes dont l'intelligence et la topologie évoluent par neuroévolution. Cette approche permet de créer des infrastructures cyber-résilientes qui, à l'image du vivant, cicatrisent après une attaque et s'adaptent organiquement à leur environnement.
 
 ## Perspective globale, impact local
 

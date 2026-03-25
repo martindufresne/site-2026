@@ -101,7 +101,7 @@ const siteConfig: SiteConfig = {
   ],
   hero: {
     title: '',
-    text: "Enseignant spécialisé en **IA, Quantique et Cybersécurité**, je consacre mes travaux de recherche à la **morphogénèse synthétique**. Ce site est un espace dédié au partage de mes projets de R&D, de mes publications et de mes réflexions sur l’évolution des systèmes **numériques** et **biologiques**. Explorez ici la convergence entre la transmission des savoirs technologiques et l'étude de la genèse des formes.",
+    text: "Enseignant spécialisé en **IA, Quantique et Cybersécurité**, je consacre mes travaux de recherche à la **morphogénèse logicielle**. Ce site est un espace dédié au partage de mes projets de R&D, de mes publications et de mes réflexions sur l’évolution des systèmes **numériques** et **biologiques**. Explorez ici la convergence entre la transmission des savoirs technologiques et l'étude de la genèse des formes.",
     image: {
       src: '/banner.jpg',
       alt: 'Enseignant spécialisé en IA, Quantique et Cybersécurité, je consacre mes travaux de recherche à la morphogénèse synthétique.'
