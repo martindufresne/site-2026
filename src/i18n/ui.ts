@@ -64,7 +64,7 @@ export const ui = {
     'copy.default': 'Share',
 
     'newsletter.title': 'Subscribe to my newsletter <br/> Out of the box',
-    'newsletter.text': 'Receive my latest articles and thoughts directly in your inbox.<br/>💡 100% exclusive content, different from the website articles.',
+    'newsletter.text': 'Receive my latest articles and thoughts directly in your inbox.<br/>💡 100% exclusive content, different from the website articles.<br/>*(Please note: The newsletter is currently written in French only)*',
     'newsletter.emailLabel': 'Email Address',
     'newsletter.emailPlaceholder': 'Your email',
     'newsletter.button': 'Subscribe',
