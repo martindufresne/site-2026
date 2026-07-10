@@ -7,7 +7,7 @@ const lang = Astro.currentLocale || 'fr'; // Detect current language
 
 <time datetime={date.toISOString()}>
     {
-        date.toLocaleDateString('fr-ca', {
+        date.toLocaleDateString(lang === 'en' ? 'en-US' : 'fr-CA', {
             year: 'numeric',
             month: 'long',
             day: 'numeric'
