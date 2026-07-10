@@ -12,5 +12,12 @@ export default defineConfig({
         tailwind({
             applyBaseStyles: false
         })
-    ]
+    ],
+    i18n: {
+        defaultLocale: 'fr',
+        locales: ['fr', 'en'],
+        routing: {
+            prefixDefaultLocale: false
+        }
+    }
 });
