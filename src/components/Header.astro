@@ -1,18 +1,23 @@
 ---
 import siteConfig from '../data/site-config';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const homeHref = lang === 'fr' ? '/' : '/en';
 ---
 
 <header class="w-full max-w-3xl mx-auto mb-12 sm:mb-16">
     {
         siteConfig.logo && siteConfig.logo?.src ? (
-            <a href="/">
+            <a href={homeHref}>
                 <img src={siteConfig.logo.src} alt={siteConfig.logo.alt || ''} class="max-h-12" />
             </a>
         ) : (
-            <a class="font-serif text-2xl leading-tight font-medium text-theme-foreground sm:text-4xl" href="/">
+            <a class="font-serif text-2xl leading-tight font-medium text-theme-foreground sm:text-4xl" href={homeHref}>
                 {siteConfig.title}
             </a>
         )
     }
-    {siteConfig.subtitle && <p class="text-sm leading-tight mt-1">{siteConfig.subtitle}</p>}
+    {t('site.subtitle') && <p class="text-sm leading-tight mt-1">{t('site.subtitle')}</p>}
 </header>
