@@ -19,7 +19,7 @@ Depuis des décennies, nous bâtissons des systèmes informatiques comme des cat
 
 Mais la nature, elle, ne construit pas de forteresses. Elle construit des **organismes**.
 
-Depuis plusieurs mois, je travail sur le concept de **morphogénèse logicielle** appliqué à l'IA et à la cybersécurité. En m'inspirant des mécanismes de survie du vivant, j'explore une voie où la sécurité ne repose plus sur l'invulnérabilité, mais sur une capacité radicale : la **résilience par la perte**.
+Depuis plusieurs mois, je travaille sur le concept de **morphogénèse logicielle** appliqué à l'IA et à la cybersécurité. En m'inspirant des mécanismes de survie du vivant, j'explore une voie où la sécurité ne repose plus sur l'invulnérabilité, mais sur une capacité radicale : la **résilience par la perte**.
 
 ---
 

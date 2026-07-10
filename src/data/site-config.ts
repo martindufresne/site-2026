@@ -40,7 +40,7 @@ export type SiteConfig = {
 const siteConfig: SiteConfig = {
   title: 'Martin Dufresne',
   subtitle: 'Décoder le numérique, programmer le vivant : explorer la convergence des systèmes.',
-  description: 'Maître procrastinateur. Individu expert créatif. Chercheur de vision. Chasseur de rêves. Passionné de design. Meilleur développeur / concepteur.',
+  description: 'Enseignant et chercheur en R&D spécialisé en IA, informatique quantique et cybersécurité. Exploration de la morphogénèse logicielle et des systèmes complexes.',
   image: {
     src: '/hero.webp',
     alt: 'Site Web - Martin Dufresne'
