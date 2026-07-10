@@ -10,6 +10,7 @@ tags:
   - TinyGo
   - Morphogénèse
   - Bio-informatique
+translationSlug: resilience-through-loss
 ---
 
 ## L'informatique actuelle est une forteresse de verre

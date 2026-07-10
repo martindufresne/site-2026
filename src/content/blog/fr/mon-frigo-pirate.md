@@ -5,6 +5,7 @@ publishDate: 'Feb 26 2026'
 isFeatured: true
 tags:
   - Cybersécurité
+translationSlug: temporal-breach-protocol
 seo:
   image:
     src: '/temporalBreach.webp'

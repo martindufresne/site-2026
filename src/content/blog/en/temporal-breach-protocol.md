@@ -5,6 +5,7 @@ publishDate: 'Feb 26 2026'
 isFeatured: true
 tags:
   - Cybersecurity
+translationSlug: mon-frigo-pirate
 seo:
   image:
     src: '/temporalBreach.webp'

@@ -19,40 +19,42 @@ const navLinks = lang === 'en' ? [
 
 // Determine other language link
 const pathname = Astro.url.pathname;
-let otherLangLink = '/';
+let otherLangLink = Astro.props.otherLangLink;
 
-if (lang === 'fr') {
-  if (pathname === '/' || pathname === '') {
-    otherLangLink = '/en';
-  } else if (pathname.startsWith('/apropos')) {
-    otherLangLink = '/en/about';
-  } else if (pathname.startsWith('/contact')) {
-    otherLangLink = '/en/contact';
-  } else if (pathname.startsWith('/mentions-legal')) {
-    otherLangLink = '/en/legal-notice';
-  } else if (pathname.startsWith('/blog')) {
-    otherLangLink = '/en/blog';
-  } else if (pathname.startsWith('/education')) {
-    otherLangLink = '/en/education';
+if (!otherLangLink) {
+  if (lang === 'fr') {
+    if (pathname === '/' || pathname === '') {
+      otherLangLink = '/en';
+    } else if (pathname.startsWith('/apropos')) {
+      otherLangLink = '/en/about';
+    } else if (pathname.startsWith('/contact')) {
+      otherLangLink = '/en/contact';
+    } else if (pathname.startsWith('/mentions-legal')) {
+      otherLangLink = '/en/legal-notice';
+    } else if (pathname.startsWith('/blog')) {
+      otherLangLink = '/en/blog';
+    } else if (pathname.startsWith('/education')) {
+      otherLangLink = '/en/education';
+    } else {
+      otherLangLink = '/en';
+    }
   } else {
-    otherLangLink = '/en';
-  }
-} else {
-  // English page
-  if (pathname === '/en' || pathname === '/en/') {
-    otherLangLink = '/';
-  } else if (pathname.startsWith('/en/about')) {
-    otherLangLink = '/apropos';
-  } else if (pathname.startsWith('/en/contact')) {
-    otherLangLink = '/contact';
-  } else if (pathname.startsWith('/en/legal-notice')) {
-    otherLangLink = '/mentions-legal';
-  } else if (pathname.startsWith('/en/blog')) {
-    otherLangLink = '/blog';
-  } else if (pathname.startsWith('/en/education')) {
-    otherLangLink = '/education';
-  } else {
-    otherLangLink = '/';
+    // English page
+    if (pathname === '/en' || pathname === '/en/') {
+      otherLangLink = '/';
+    } else if (pathname.startsWith('/en/about')) {
+      otherLangLink = '/apropos';
+    } else if (pathname.startsWith('/en/contact')) {
+      otherLangLink = '/contact';
+    } else if (pathname.startsWith('/en/legal-notice')) {
+      otherLangLink = '/mentions-legal';
+    } else if (pathname.startsWith('/en/blog')) {
+      otherLangLink = '/blog';
+    } else if (pathname.startsWith('/en/education')) {
+      otherLangLink = '/education';
+    } else {
+      otherLangLink = '/';
+    }
   }
 }
 ---

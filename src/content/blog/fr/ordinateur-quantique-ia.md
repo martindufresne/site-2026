@@ -5,6 +5,7 @@ publishDate: 'Feb 4 2026'
 isFeatured: true
 tags:
   - Quantique
+translationSlug: quantum-computing-ai
 seo:
   image:
     src: '/post-1.jpg'
