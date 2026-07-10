@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Button from '../../components/Button.astro';
+---
+
+<BaseLayout title="Merci pour votre inscription !" description="Votre inscription a été validée avec succès." showHeader={false}>
+  <section class="py-12 sm:py-24 text-center max-w-xl mx-auto flex flex-col items-center gap-8">
+    <div class="w-16 h-16 bg-green-500/10 border border-green-500 rounded-full flex items-center justify-center text-green-500 text-3xl font-serif">
+      ✓
+    </div>
+    
+    <header class="flex flex-col gap-3">
+      <h1 class="text-3xl sm:text-4xl font-serif font-medium leading-tight">Merci pour votre confiance !</h1>
+      <p class="text-lg text-main/80 font-serif italic">
+        Votre paiement et votre inscription ont été confirmés avec succès.
+      </p>
+    </header>
+
+    <div class="text-sm sm:text-base leading-relaxed text-main/80 flex flex-col gap-4 border border-dashed border-main p-6 rounded-lg w-full text-left">
+      <h2 class="font-serif uppercase tracking-wider text-main font-semibold text-xs border-b border-dashed border-main/20 pb-2">Prochaines étapes :</h2>
+      <p>
+        📧 <strong>Reçu fiscal :</strong> Stripe vous a envoyé une confirmation de paiement et votre facture par courriel immédiatement.
+      </p>
+      <p>
+        📅 <strong>Lien de connexion :</strong> Dans les prochaines 24 heures, vous recevrez un courriel de ma part contenant l'invitation de calendrier, le lien de connexion Zoom et le matériel préparatoire.
+      </p>
+      <p>
+        💬 <strong>Soutien :</strong> Pour toute question urgente d'ici là, écrivez-moi directement à <a href="mailto:martindufresne@gmail.com" class="underline hover:opacity-85">martindufresne@gmail.com</a>.
+      </p>
+    </div>
+
+    <div class="mt-4 flex gap-4">
+      <Button href="/">Retour à l'accueil</Button>
+      <Button href="/blog">Lire les articles</Button>
+    </div>
+  </section>
+</BaseLayout>
