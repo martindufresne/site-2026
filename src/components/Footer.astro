@@ -1,8 +1,20 @@
 ---
 import siteConfig from '../data/site-config';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const socialLinks = siteConfig.socialLinks || [];
-const navLinks = siteConfig.footerNavLinks || [];
+const navLinks = lang === 'en' ? [
+  { text: 'About', href: '/en/about' },
+  { text: 'Contact', href: '/en/contact' },
+  { text: 'Legal Notice', href: '/en/legal-notice' }
+] : [
+  { text: 'À propos', href: '/apropos' },
+  { text: 'Contact', href: '/contact' },
+  { text: 'Mentions légales', href: '/mentions-legal' }
+];
 ---
 
 <footer class="w-full max-w-3xl mx-auto pt-12 pb-10 sm:pt-24 sm:pb-14">
@@ -40,7 +52,7 @@ const navLinks = siteConfig.footerNavLinks || [];
             )
         }
         <p class="text-sm">
-            &copy; {new Date().getFullYear()}&nbsp;<a class="hover:underline hover:underline-offset-2" href="/">{siteConfig.title}</a>. Tous droits réservés.
+            &copy; {new Date().getFullYear()}&nbsp;<a class="hover:underline hover:underline-offset-2" href={lang === 'fr' ? '/' : '/en'}>{siteConfig.title}</a>. {t('footer.rights')}
         </p>
     </div>
 </footer>

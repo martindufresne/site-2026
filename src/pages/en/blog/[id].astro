@@ -1,21 +1,21 @@
 ---
 import { type CollectionEntry, getCollection, render } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Button from '../../components/Button.astro';
-import FormattedDate from '../../components/FormattedDate.astro';
-import PostPreview from '../../components/PostPreview.astro';
-import Subscribe from '../../components/Subscribe.astro';
-import { sortItemsByDateDesc } from '../../utils/data-utils';
-import { slugify } from '../../utils/common-utils';
-import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Button from '../../../components/Button.astro';
+import FormattedDate from '../../../components/FormattedDate.astro';
+import PostPreview from '../../../components/PostPreview.astro';
+import Subscribe from '../../../components/Subscribe.astro';
+import { sortItemsByDateDesc } from '../../../utils/data-utils';
+import { slugify } from '../../../utils/common-utils';
+import { getLangFromUrl, useTranslations } from '../../../i18n/utils';
 
 export async function getStaticPaths() {
     const posts = (await getCollection('blog'))
-        .filter((post) => post.id.startsWith('fr/'))
+        .filter((post) => post.id.startsWith('en/'))
         .sort(sortItemsByDateDesc);
     const postCount = posts.length;
     return posts.map((post, index) => {
-        const cleanId = post.id.replace(/^fr\//, '');
+        const cleanId = post.id.replace(/^en\//, '');
         return {
             params: { id: cleanId },
             props: {

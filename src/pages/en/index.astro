@@ -1,26 +1,25 @@
 ---
 import { getCollection } from 'astro:content';
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Button from '../components/Button.astro';
-import Hero from '../components/Hero.astro';
-import PostPreview from '../components/PostPreview.astro';
-import ProjectPreview from '../components/ProjectPreview.astro';
-import Newsletter from '../components/Newsletter.astro';
-import siteConfig from '../data/site-config';
-import { sortItemsByDateDesc } from '../utils/data-utils';
-
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Button from '../../components/Button.astro';
+import Hero from '../../components/Hero.astro';
+import PostPreview from '../../components/PostPreview.astro';
+import ProjectPreview from '../../components/ProjectPreview.astro';
+import Newsletter from '../../components/Newsletter.astro';
+import siteConfig from '../../data/site-config';
+import { sortItemsByDateDesc } from '../../utils/data-utils';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const posts = (await getCollection('blog'))
-    .filter((post) => post.id.startsWith('fr/'))
+    .filter((post) => post.id.startsWith('en/'))
     .sort(sortItemsByDateDesc);
 const featuredPosts = posts.filter(({ data }) => data.isFeatured);
 
 const projects = (await getCollection('projects'))
-    .filter((project) => project.id.startsWith('fr/'))
+    .filter((project) => project.id.startsWith('en/'))
     .sort(sortItemsByDateDesc);
 const featuredProjects = projects.filter(({ data }) => data.isFeatured);
 ---
@@ -30,12 +29,12 @@ const featuredProjects = projects.filter(({ data }) => data.isFeatured);
     <!-- {
         featuredProjects?.length > 0 && (
             <div class="mb-16 sm:mb-24">
-                <h2 class="mb-12 text-xl font-serif italic sm:mb-16 sm:text-2xl">Projets</h2>
+                <h2 class="mb-12 text-xl font-serif italic sm:mb-16 sm:text-2xl">Projects</h2>
                 {featuredProjects.map((project) => (
                     <ProjectPreview project={project} class="mb-10 sm:mb-12" headingLevel="h3" />
                 ))}
                 <div class="mt-12 sm:mt-16">
-                    <Button href="/projects">À venir...</Button>
+                    <Button href="/en/projects">Coming soon...</Button>
                 </div>
             </div>
         )
@@ -48,7 +47,7 @@ const featuredProjects = projects.filter(({ data }) => data.isFeatured);
                     <PostPreview post={post} class="mb-10 sm:mb-12" headingLevel="h3" />
                 ))}
                 <div class="mt-12 sm:mt-16">
-                    <Button href="/blog">{t('blog.subtitle')}</Button>
+                    <Button href="/en/blog">{t('blog.subtitle')}</Button>
                 </div>
             </div>
         )

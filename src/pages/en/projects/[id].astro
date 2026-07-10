@@ -1,17 +1,17 @@
 ---
 import { type CollectionEntry, getCollection, render } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import ProjectPreview from '../../components/ProjectPreview.astro';
-import { sortItemsByDateDesc } from '../../utils/data-utils';
-import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ProjectPreview from '../../../components/ProjectPreview.astro';
+import { sortItemsByDateDesc } from '../../../utils/data-utils';
+import { getLangFromUrl, useTranslations } from '../../../i18n/utils';
 
 export async function getStaticPaths() {
     const projects = (await getCollection('projects'))
-        .filter((project) => project.id.startsWith('fr/'))
+        .filter((project) => project.id.startsWith('en/'))
         .sort(sortItemsByDateDesc);
     const projectCount = projects.length;
     return projects.map((project, index) => {
-        const cleanId = project.id.replace(/^fr\//, '');
+        const cleanId = project.id.replace(/^en\//, '');
         return {
             params: { id: cleanId },
             props: {

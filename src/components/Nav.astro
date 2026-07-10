@@ -1,9 +1,60 @@
 ---
 import NavLink from './NavLink.astro';
 import ThemeToggle from './ThemeToggle.astro';
-import siteConfig from '../data/site-config';
+import { getLangFromUrl } from '../i18n/utils';
 
-const navLinks = siteConfig.headerNavLinks || [];
+const lang = getLangFromUrl(Astro.url);
+
+const navLinks = lang === 'en' ? [
+  { text: 'Home', href: '/en' },
+  { text: 'About', href: '/en/about' },
+  { text: 'Education', href: '/en/education' },
+  { text: 'Articles', href: '/en/blog' }
+] : [
+  { text: 'Accueil', href: '/' },
+  { text: 'À propos', href: '/apropos' },
+  { text: 'Éducation', href: '/education' },
+  { text: 'Articles', href: '/blog' }
+];
+
+// Determine other language link
+const pathname = Astro.url.pathname;
+let otherLangLink = '/';
+
+if (lang === 'fr') {
+  if (pathname === '/' || pathname === '') {
+    otherLangLink = '/en';
+  } else if (pathname.startsWith('/apropos')) {
+    otherLangLink = '/en/about';
+  } else if (pathname.startsWith('/contact')) {
+    otherLangLink = '/en/contact';
+  } else if (pathname.startsWith('/mentions-legal')) {
+    otherLangLink = '/en/legal-notice';
+  } else if (pathname.startsWith('/blog')) {
+    otherLangLink = '/en/blog';
+  } else if (pathname.startsWith('/education')) {
+    otherLangLink = '/en/education';
+  } else {
+    otherLangLink = '/en';
+  }
+} else {
+  // English page
+  if (pathname === '/en' || pathname === '/en/') {
+    otherLangLink = '/';
+  } else if (pathname.startsWith('/en/about')) {
+    otherLangLink = '/apropos';
+  } else if (pathname.startsWith('/en/contact')) {
+    otherLangLink = '/contact';
+  } else if (pathname.startsWith('/en/legal-notice')) {
+    otherLangLink = '/mentions-legal';
+  } else if (pathname.startsWith('/en/blog')) {
+    otherLangLink = '/blog';
+  } else if (pathname.startsWith('/en/education')) {
+    otherLangLink = '/education';
+  } else {
+    otherLangLink = '/';
+  }
+}
 ---
 
 <nav class="min-h-10 pt-4 pb-12 relative sm:min-h-14 sm:pb-24 md:pt-8">
@@ -33,7 +84,13 @@ const navLinks = siteConfig.headerNavLinks || [];
             </div>
         )
     }
-    <div class="absolute right-0 top-4 z-10 md:top-8">
+    <div class="absolute right-0 top-4 z-10 md:top-8 flex items-center gap-4">
+        <a 
+            href={otherLangLink} 
+            class="text-xs font-serif font-semibold tracking-wider hover:underline px-2.5 py-1 rounded bg-muted/10 border border-main/10 hover:border-main/30 hover:bg-muted/20 transition-all"
+        >
+            {lang === 'fr' ? 'EN' : 'FR'}
+        </a>
         <ThemeToggle />
     </div>
 </nav>
