@@ -10,7 +10,7 @@ tags:
   - TinyGo
   - Morphogenesis
   - Bioinformatics
-translationSlug: la-résilience-par-la-erte_Pourquoi-mon-code-doit-mourir-pour-survivre
+translationSlug: la-résilience-par-la-erte_pourquoi-mon-code-doit-mourir-pour-survivre
 ---
 
 ## Current Computing is a Glass Fortress
