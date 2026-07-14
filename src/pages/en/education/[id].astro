@@ -1,0 +1,142 @@
+---
+import { type CollectionEntry, getCollection, render } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Button from '../../../components/Button.astro';
+import { getLangFromUrl, useTranslations } from '../../../i18n/utils';
+
+export async function getStaticPaths() {
+    // Map French courses to English routes as a fallback since they are only offered in French
+    const courses = (await getCollection('courses'))
+        .filter((course) => course.id.startsWith('fr/'));
+    
+    return courses.map((course) => {
+        const cleanId = course.id.replace(/^fr\//, '');
+        return {
+            params: { id: cleanId },
+            props: { course }
+        };
+    });
+}
+
+type Props = { course: CollectionEntry<'courses'> };
+
+const { course } = Astro.props;
+const { Content } = await render(course);
+const { 
+    title, 
+    subtitle, 
+    excerpt, 
+    duration, 
+    format, 
+    difficulty, 
+    priceUnique, 
+    priceInstallments,
+    seo 
+} = course.data;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<BaseLayout title={seo?.title ?? title} description={seo?.description ?? excerpt} image={seo?.image} pageType="article" showHeader={false}>
+    <div class="mb-8">
+        <a href="/en/education" class="text-xs uppercase tracking-wider text-main/60 hover:text-main transition-colors flex items-center gap-2">
+            ← Back to Education catalog
+        </a>
+    </div>
+
+    <!-- French delivery notice -->
+    <div class="mb-10 bg-amber-500/10 border border-amber-500/20 text-amber-800 dark:text-amber-300 rounded-lg p-4 text-sm leading-relaxed">
+        ⚠️ <strong>Language Notice</strong>: This course is currently delivered in <strong>French only</strong>. The course syllabus and materials below are displayed in their original language. If you are interested in an English cohort, please register your interest using the pre-registration button on the sidebar.
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-start mb-16">
+        <!-- Main Column (Left) -->
+        <div class="md:col-span-2">
+            <div class="space-y-4 mb-8">
+                <span class="inline-block text-xs font-medium uppercase tracking-wider bg-theme-foreground/5 text-theme-foreground px-2.5 py-1 rounded">
+                    {format}
+                </span>
+                <h1 class="text-3xl sm:text-4xl font-serif font-medium leading-tight text-main">
+                    {title}
+                </h1>
+                {subtitle && <p class="text-lg text-main/80 italic font-serif leading-relaxed">{subtitle}</p>}
+                <p class="text-base leading-relaxed text-main/70 border-l-2 border-theme-foreground/30 pl-4 py-1">
+                    {excerpt}
+                </p>
+            </div>
+
+            <!-- Markdown Content Rendered -->
+            <div class="prose prose-dante max-w-none prose-headings:font-serif prose-headings:font-medium prose-a:text-theme-foreground">
+                <Content />
+            </div>
+        </div>
+
+        <!-- Sidebar (Right) -->
+        <div class="md:col-span-1 md:sticky md:top-8 bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200/60 dark:border-zinc-800/60 rounded-xl p-6 shadow-sm">
+            <div class="space-y-6">
+                <div>
+                    <span class="text-xs uppercase tracking-wider text-main/60 block mb-1">One-time payment</span>
+                    <div class="text-3xl font-bold text-main">{priceUnique}</div>
+                    {priceInstallments && (
+                        <p class="text-xs text-main/60 mt-1">
+                            Or installments: {priceInstallments}
+                        </p>
+                    )}
+                </div>
+
+                <hr class="border-zinc-200 dark:border-zinc-800" />
+
+                <!-- Details Specs List -->
+                <div class="space-y-3.5 text-sm">
+                    <div class="flex items-start gap-3">
+                        <span class="text-base">⏳</span>
+                        <div>
+                            <strong class="block font-medium text-main">Duration</strong>
+                            <span class="text-main/70">{duration}</span>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-base">💻</span>
+                        <div>
+                            <strong class="block font-medium text-main">Format</strong>
+                            <span class="text-main/70">{format}</span>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-base">🎓</span>
+                        <div>
+                            <strong class="block font-medium text-main">Required Level</strong>
+                            <span class="text-main/70">{difficulty}</span>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-base">💳</span>
+                        <div>
+                            <strong class="block font-medium text-main">Payment Options</strong>
+                            <span class="text-main/70">1x, 6x or 12x available</span>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="border-zinc-200 dark:border-zinc-800" />
+
+                <!-- Registration Widget -->
+                <div class="space-y-3">
+                    <div class="bg-theme-foreground/5 text-theme-foreground rounded-lg p-3.5 text-xs leading-relaxed">
+                        📢 <strong>Quorum Required</strong>: This cohort will launch once we reach 5 pre-registered participants. Pre-register for free to secure your interest!
+                    </div>
+
+                    <!-- Temporary Action Button -->
+                    <Button href="/en/education/thanks" class="w-full justify-center text-center">
+                        Pre-register for free
+                    </Button>
+
+                    <p class="text-[10px] text-main/50 text-center leading-normal">
+                        No credit card charge. You will receive a payment invoice once the English or French cohort is confirmed.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</BaseLayout>

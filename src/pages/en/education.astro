@@ -1,4 +1,5 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Button from '../../components/Button.astro';
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
@@ -6,155 +7,85 @@ import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-// Mock Stripe links (user will replace these with real Stripe links)
-const courses = [
-  {
-    id: 'quantum',
-    title: "Introduction to Quantum Computing",
-    subtitle: "A practical seminar for developers & engineers",
-    description: "Understand qubits, quantum gates, and learn how to program on actual physical quantum simulators. No advanced mathematics background required.",
-    duration: "12 hours (4 sessions of 3 hours)",
-    format: "Live Webinar (Zoom) + Recorded sessions provided",
-    date: "Next Cohort: October 2026",
-    features: [
-      "Core principles of qubits (superposition, entanglement)",
-      "Hands-on coding of basic algorithms with Qiskit",
-      "Real-world case studies on post-quantum cryptography",
-      "Lifetime access to video recordings and GitHub repository"
-    ],
-    pricing: {
-      single: {
-        price: "290 CAD",
-        label: "One-time payment",
-        link: "https://checkout.stripe.com/c/pay/pk_test_mock_quantum_single" // Replace with real Stripe link
-      },
-      installments: {
-        price: "100 CAD / mo",
-        label: "3-Month payment plan (3x 100 CAD)",
-        link: "https://checkout.stripe.com/c/pay/pk_test_mock_quantum_installments" // Replace with real Stripe link
-      }
-    }
-  },
-  {
-    id: 'cyber-ai',
-    title: "Cybersecurity & Agentic AI",
-    subtitle: "Offensive defense and resilient architectures",
-    description: "Learn to design autonomous intelligent agents capable of detecting intrusions, and discover how to audit and secure your systems against LLM vulnerabilities.",
-    duration: "15 hours (5 sessions of 3 hours)",
-    format: "Live Webinar (Zoom) + Practical Workshop",
-    date: "Next Cohort: November 2026",
-    features: [
-      "Architectures for cyber-resilient agents (software morphogenesis)",
-      "Securing LLMs (prompt injection attacks, jailbreaking)",
-      "Automating threat detection with Knowledge Graphs",
-      "Certificate of completion & Access to Cohort Slack channel"
-    ],
-    pricing: {
-      single: {
-        price: "390 CAD",
-        label: "One-time payment",
-        link: "https://checkout.stripe.com/c/pay/pk_test_mock_cyber_single" // Replace with real Stripe link
-      },
-      installments: {
-        price: "135 CAD / mo",
-        label: "3-Month payment plan (3x 135 CAD)",
-        link: "https://checkout.stripe.com/c/pay/pk_test_mock_cyber_installments" // Replace with real Stripe link
-      }
-    }
-  }
-];
+// Fetch all courses. Look for English files first; fallback to French if none exist.
+const allCourses = await getCollection('courses');
+let courses = allCourses.filter((course) => course.id.startsWith('en/'));
+const isFallback = courses.length === 0;
+
+if (isFallback) {
+    courses = allCourses.filter((course) => course.id.startsWith('fr/'));
+}
+
+// Sort courses: featured ones first
+courses.sort((a, b) => {
+    if (a.data.isFeatured && !b.data.isFeatured) return -1;
+    if (!a.data.isFeatured && b.data.isFeatured) return 1;
+    return 0;
+});
 ---
 
-<BaseLayout title="Courses & Education" description="Advanced courses on quantum computing, AI, and cybersecurity." showHeader={false}>
+<BaseLayout title="Courses & Education" description="Advanced courses and workshops on cybersecurity, AI, and quantum computing." showHeader={false}>
   <section class="mb-16 sm:mb-24">
     <header class="mb-12 border-b border-dashed border-main pb-8">
       <h1 class="text-3xl leading-tight font-serif font-medium sm:text-5xl sm:leading-tight mb-4">Education</h1>
       <p class="text-lg text-main/80 font-serif italic max-w-2xl">
-        High-quality, interactive training at the intersection of academic R&D and digital industry practice.
+        Cutting-edge training programs, designed to bridge academic research and technical industry needs.
       </p>
     </header>
 
-    <!-- Courses List -->
-    <div class="flex flex-col gap-16">
-      {courses.map((course) => (
-        <article class="p-6 border border-dashed border-main rounded-xl flex flex-col gap-6" data-course-id={course.id}>
-          <div>
-            <span class="text-xs uppercase tracking-widest font-semibold text-main/60">{course.format}</span>
-            <h2 class="text-2xl font-serif font-medium sm:text-3xl mt-1">{course.title}</h2>
-            <p class="text-sm font-serif italic text-main/80 mt-1">{course.subtitle}</p>
-          </div>
+    {isFallback && (
+      <div class="mb-10 bg-amber-500/10 border border-amber-500/20 text-amber-800 dark:text-amber-300 rounded-lg p-4 text-sm leading-relaxed">
+        ⚠️ <strong>Notice</strong>: Our training courses are currently delivered in <strong>French only</strong>. You can browse the syllabus details in French by selecting a course below. If you want to request an English cohort, feel free to pre-register.
+      </div>
+    )}
 
-          <p class="text-base leading-relaxed">{course.description}</p>
-
-          <div>
-            <h3 class="text-sm font-semibold mb-2 font-serif uppercase tracking-wider text-main/85">Syllabus Overview:</h3>
-            <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
-              {course.features.map((feature) => (
-                <li class="flex items-start gap-2">
-                  <span class="text-main/70">✓</span>
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div class="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-dashed border-main/40 text-sm">
-            <div>
-              <p>⏱ <strong>Duration:</strong> {course.duration}</p>
-              <p class="mt-1">📅 <strong>Schedule:</strong> {course.date}</p>
-            </div>
-          </div>
-
-          <!-- Interactive Checkout Block -->
-          <div class="bg-muted/10 p-5 rounded-lg border border-main/10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 mt-2">
-            <!-- Payment Option Selectors -->
-            <div class="flex flex-col gap-3">
-              <span class="text-xs font-semibold uppercase tracking-wider text-main/60">Registration Option:</span>
-              <div class="flex flex-col gap-2">
-                <label class="inline-flex items-center gap-2 cursor-pointer text-sm">
-                  <input 
-                    type="radio" 
-                    name={`payment-option-${course.id}`} 
-                    value="single" 
-                    checked 
-                    class="accent-current w-4 h-4"
-                    data-price={course.pricing.single.price}
-                    data-link={course.pricing.single.link}
-                  />
-                  <span>{course.pricing.single.label} : <strong>{course.pricing.single.price}</strong></span>
-                </label>
-                <label class="inline-flex items-center gap-2 cursor-pointer text-sm">
-                  <input 
-                    type="radio" 
-                    name={`payment-option-${course.id}`} 
-                    value="installments" 
-                    class="accent-current w-4 h-4"
-                    data-price={course.pricing.installments.price}
-                    data-link={course.pricing.installments.link}
-                  />
-                  <span>{course.pricing.installments.label} : <strong>{course.pricing.installments.price}</strong></span>
-                </label>
-              </div>
-            </div>
-
-            <!-- Stripe Action Button -->
-            <div class="flex flex-col items-end gap-2 w-full sm:w-auto">
-              <Button 
-                href={course.pricing.single.link} 
-                class="w-full sm:w-auto justify-center px-8 py-3 text-base shadow-sm checkout-btn" 
-                data-course={course.id}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Register for <span class="price-display ml-1.5 font-bold">{course.pricing.single.price}</span>
-              </Button>
-              <span class="text-xs text-main/50 flex items-center gap-1.5 self-center sm:self-end">
-                🔒 Secure payment powered by Stripe
+    <!-- Courses Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {courses.map((course) => {
+        const cleanId = course.id.replace(/^(fr|en)\//, '');
+        const { title, excerpt, duration, format, priceUnique, isFeatured } = course.data;
+        
+        return (
+          <article class={`flex flex-col justify-between p-6 border rounded-xl relative ${
+            isFeatured 
+              ? 'border-theme-foreground bg-theme-foreground/5' 
+              : 'border-dashed border-main/80'
+          }`}>
+            {isFeatured && (
+              <span class="absolute -top-3 left-6 px-3 py-0.5 bg-theme-foreground text-bg-main text-[10px] uppercase tracking-widest font-semibold rounded-full">
+                Featured
               </span>
+            )}
+            
+            <div class="space-y-4">
+              <div>
+                <div class="flex items-center gap-2 text-xs uppercase tracking-wider text-main/60">
+                  <span>{duration}</span>
+                  <span>•</span>
+                  <span>{format}</span>
+                </div>
+                <h2 class="text-xl sm:text-2xl font-serif font-medium mt-1.5 text-main">
+                  {title}
+                </h2>
+              </div>
+
+              <p class="text-sm leading-relaxed text-main/80">
+                {excerpt}
+              </p>
             </div>
-          </div>
-        </article>
-      ))}
+
+            <div class="mt-6 pt-4 border-t border-dashed border-main/20 flex items-center justify-between gap-4">
+              <div>
+                <span class="text-[10px] uppercase tracking-wider text-main/60 block">Price</span>
+                <strong class="text-base text-main">{priceUnique}</strong>
+              </div>
+              <Button href={`/en/education/${cleanId}`} class="text-sm px-4 py-2">
+                View course details
+              </Button>
+            </div>
+          </article>
+        );
+      })}
     </div>
 
     <!-- How it works (FAQ) -->
@@ -162,65 +93,30 @@ const courses = [
       <h2 class="text-2xl font-serif font-medium mb-8">How does registration work?</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm leading-relaxed">
         <div>
-          <h3 class="font-serif font-medium text-lg mb-2">1. Register and Pay</h3>
+          <h3 class="font-serif font-medium text-lg mb-2">1. Free Pre-Registration</h3>
           <p class="text-main/80">
-            Select your course and chosen payment option. Clicking the button will take you to an encrypted, 100% secure Stripe Checkout page to submit your details.
+            To ensure the highest quality experience, our cohorts have limited seats and require a minimum number of participants (quorum) to start. You can reserve your spot for free by filling out the pre-registration form on your selected course page.
           </p>
         </div>
         <div>
-          <h3 class="font-serif font-medium text-lg mb-2">2. Confirmation & Schedule</h3>
+          <h3 class="font-serif font-medium text-lg mb-2">2. Quorum Confirmation</h3>
           <p class="text-main/80">
-            Once payment is successful, Stripe will instantly send you an invoice receipt. Within 24 hours, you will receive a welcome email from me with Zoom links, calendar invites, and prep-work materials.
+            As soon as the required quorum is met for a session, we confirm the cohort dates and you will receive a final checkout link via email with your Stripe payment options.
           </p>
         </div>
         <div>
-          <h3 class="font-serif font-medium text-lg mb-2">3. Installment Plan Details</h3>
+          <h3 class="font-serif font-medium text-lg mb-2">3. Payment & Installment Options</h3>
           <p class="text-main/80">
-            If you select the 3-month payment plan, your first monthly payment is charged immediately. The remaining two payments will be automatically charged monthly on the same credit card.
+            Payments are processed securely via Stripe. Depending on the duration of the program, you can choose between a one-time payment or flexible monthly installments spread over 3, 6, or 12 months.
           </p>
         </div>
         <div>
-          <h3 class="font-serif font-medium text-lg mb-2">4. Have questions?</h3>
+          <h3 class="font-serif font-medium text-lg mb-2">4. Calendar Invite & Welcome Materials</h3>
           <p class="text-main/80">
-            For scheduling adjustments, corporate purchase orders, or detailed syllabus requests, feel free to write to me directly via the <a href="/en/contact" class="underline hover:opacity-85">Contact</a> page.
+            Once payment is validated, you will automatically receive your Google Calendar invitations (including the Google Meet links for the class) along with welcome emails containing virtual lab accesses and preparation documents.
           </p>
         </div>
       </div>
     </div>
   </section>
 </BaseLayout>
-
-<script>
-  function setupCheckoutToggles() {
-    const articles = document.querySelectorAll('article[data-course-id]');
-    
-    articles.forEach((article) => {
-      const radios = article.querySelectorAll('input[type="radio"]');
-      const checkoutBtn = article.querySelector('.checkout-btn') as HTMLAnchorElement;
-      const priceDisplay = article.querySelector('.price-display') as HTMLElement;
-      
-      radios.forEach((radio) => {
-        radio.addEventListener('change', (e) => {
-          const target = e.target as HTMLInputElement;
-          if (target.checked) {
-            const link = target.getAttribute('data-link') || '';
-            const price = target.getAttribute('data-price') || '';
-            
-            if (checkoutBtn) {
-              checkoutBtn.setAttribute('href', link);
-            }
-            if (priceDisplay) {
-              priceDisplay.textContent = price;
-            }
-          }
-        });
-      });
-    });
-  }
-
-  // Setup on page load
-  setupCheckoutToggles();
-  
-  // Setup again on page transitions (Astro View Transitions)
-  document.addEventListener('astro:page-load', setupCheckoutToggles);
-</script>

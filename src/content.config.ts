@@ -47,4 +47,24 @@ const projects = defineCollection({
     })
 });
 
-export const collections = { blog, pages, projects };
+const courses = defineCollection({
+    loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/courses' }),
+    schema: z.object({
+        title: z.string(),
+        subtitle: z.string().optional(),
+        excerpt: z.string(),
+        duration: z.string(),
+        format: z.string(),
+        difficulty: z.string(),
+        priceUnique: z.string(),
+        priceInstallments: z.string().optional(),
+        stripeUniqueLink: z.string().optional(),
+        stripeInstallments6Link: z.string().optional(),
+        stripeInstallments12Link: z.string().optional(),
+        isFeatured: z.boolean().default(false),
+        publishDate: z.coerce.date().optional(),
+        seo: seoSchema.optional()
+    })
+});
+
+export const collections = { blog, pages, projects, courses };
