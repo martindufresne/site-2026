@@ -40,7 +40,7 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<BaseLayout title={seo?.title ?? title} description={seo?.description ?? excerpt} image={seo?.image} pageType="article" showHeader={false}>
+<BaseLayout title={seo?.title ?? title} description={seo?.description ?? excerpt} image={seo?.image} pageType="article" showHeader={false} containerClass="max-w-5xl">
     <div class="mb-8">
         <a href="/education" class="text-xs uppercase tracking-wider text-main/60 hover:text-main transition-colors flex items-center gap-2">
             ← Retour au catalogue Éducation

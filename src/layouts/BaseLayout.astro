@@ -5,9 +5,9 @@ import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import Nav from '../components/Nav.astro';
 
-export type Props = HeadProps & { showHeader?: boolean; otherLangLink?: string };
+export type Props = HeadProps & { showHeader?: boolean; otherLangLink?: string; containerClass?: string };
 
-const { showHeader = true, otherLangLink, ...head } = Astro.props;
+const { showHeader = true, otherLangLink, containerClass = "max-w-3xl", ...head } = Astro.props;
 const lang = Astro.currentLocale || 'fr';
 ---
 
@@ -26,7 +26,7 @@ const lang = Astro.currentLocale || 'fr';
         <div class="flex flex-col min-h-screen px-4 md:px-8">
             <Nav otherLangLink={otherLangLink} />
             {showHeader && <Header />}
-            <main class="grow w-full max-w-3xl mx-auto">
+            <main class={`grow w-full mx-auto ${containerClass}`}>
                 <slot />
             </main>
             <Footer />
