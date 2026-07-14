@@ -33,3 +33,9 @@ L'intégration ultra-rapide des Large Language Models (LLM) dans les application
   * Implémentation de barrières de sécurité et filtres d'entrée/sortie (NeMo Guardrails, Llama Guard).
   * **Sandboxing** et isolation des outils d'exécution des agents d'IA.
   * Audit continu et méthodologies d'analyse de vulnérabilités pour applications intelligentes.
+
+---
+
+## Certification
+
+* **Certificat de réussite** : Un certificat officiel de réussite vous sera remis à la fin de la formation après complétion des ateliers pratiques.

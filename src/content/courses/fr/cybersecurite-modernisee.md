@@ -5,8 +5,8 @@ excerpt: "Un cursus intensif conçu pour capitaliser sur vos bases en informatiq
 duration: "190 heures"
 format: "À distance"
 difficulty: "Connaissances générales en informatique requises"
-priceUnique: "5 100 $ CAD"
-priceInstallments: "3 mensualités de 1 700 $, 6 de 850 $ ou 12 de 425 $"
+priceUnique: "3 200 $ CAD (Tarif de lancement)"
+priceInstallments: "3 mensualités de 1 070 $, 6 de 535 $ ou 12 de 270 $"
 stripeUniqueLink: "#"
 stripeInstallments6Link: "#"
 stripeInstallments12Link: "#"
@@ -75,3 +75,9 @@ L'apprentissage est 100% orienté pratique grâce à trois environnements de lab
 1. **Plateforme Cloud** (TryHackMe / HackTheBox Enterprise) : Accès direct à des machines de test (Kali Linux) dans le navigateur, prêt en 30 secondes.
 2. **Conteneurs Docker locaux** : Environnements pré-packagés contenant des LLMs locaux vulnérables et des librairies de cryptographie post-quantique.
 3. **Sandboxes AWS / Azure** : Pour simuler des infrastructures d'entreprise d'échelle réelle (Active Directory, SIEM, Pare-feu).
+
+---
+
+## Certification
+
+* **Certificat de réussite** : Un certificat officiel de réussite vous sera remis à la fin du cursus après validation des travaux pratiques de synthèse, idéal pour faire valoir vos compétences auprès de votre employeur ou sur LinkedIn.

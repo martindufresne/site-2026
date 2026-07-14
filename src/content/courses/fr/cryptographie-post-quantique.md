@@ -41,4 +41,10 @@ L'arrivée des ordinateurs quantiques menace directement les fondations de la s�
 
 * **Cours 5 : Architectures de transition & Hybridation**
   * Conception de protocoles de sécurité hybrides (classique + post-quantique).
-  * Audit et mise à jour des infrastructures de clés (PKI), certificats X.509 et serveurs web (TLS 1.3 quantum-safe).
+  * Audit et mise à jour de vos infrastructures de clés (PKI), certificats X.509 et serveurs web (TLS 1.3 quantum-safe).
+
+---
+
+## Certification
+
+* **Certificat de réussite** : Un certificat officiel de réussite vous sera remis à la fin de la formation après complétion des ateliers pratiques.
