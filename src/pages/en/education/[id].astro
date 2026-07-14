@@ -88,41 +88,26 @@ const t = useTranslations(lang);
                 <hr class="border-zinc-200 dark:border-zinc-800" />
 
                 <!-- Details Specs List -->
-                <div class="space-y-3.5 text-sm">
-                    <div class="flex items-start gap-3">
-                        <span class="text-base">⏳</span>
-                        <div>
-                            <strong class="block font-medium text-main">Duration</strong>
-                            <span class="text-main/70">{duration}</span>
-                        </div>
+                <div class="space-y-4 text-sm">
+                    <div>
+                        <strong class="block font-medium text-main">Duration</strong>
+                        <span class="text-main/70">{duration}</span>
                     </div>
-                    <div class="flex items-start gap-3">
-                        <span class="text-base">💻</span>
-                        <div>
-                            <strong class="block font-medium text-main">Format</strong>
-                            <span class="text-main/70">{format}</span>
-                        </div>
+                    <div>
+                        <strong class="block font-medium text-main">Format</strong>
+                        <span class="text-main/70">{format}</span>
                     </div>
-                    <div class="flex items-start gap-3">
-                        <span class="text-base">🎓</span>
-                        <div>
-                            <strong class="block font-medium text-main">Required Level</strong>
-                            <span class="text-main/70">{difficulty}</span>
-                        </div>
+                    <div>
+                        <strong class="block font-medium text-main">Required Level</strong>
+                        <span class="text-main/70">{difficulty}</span>
                     </div>
-                    <div class="flex items-start gap-3">
-                        <span class="text-base">📜</span>
-                        <div>
-                            <strong class="block font-medium text-main">Certification</strong>
-                            <span class="text-main/70">Certificate awarded</span>
-                        </div>
+                    <div>
+                        <strong class="block font-medium text-main">Certification</strong>
+                        <span class="text-main/70">Certificate of Completion awarded</span>
                     </div>
-                    <div class="flex items-start gap-3">
-                        <span class="text-base">💳</span>
-                        <div>
-                            <strong class="block font-medium text-main">Payment Options</strong>
-                            <span class="text-main/70">1x, 3x, 6x or 12x available</span>
-                        </div>
+                    <div>
+                        <strong class="block font-medium text-main">Payment Options</strong>
+                        <span class="text-main/70">1x, 3x, 6x or 12x available</span>
                     </div>
                 </div>
 
@@ -131,7 +116,7 @@ const t = useTranslations(lang);
                 <!-- Registration Widget -->
                 <div class="space-y-3" id="pre-reg-container">
                     <div class="bg-theme-foreground/5 text-theme-foreground rounded-lg p-3.5 text-xs leading-relaxed">
-                        📢 <strong>Quorum Required</strong>: This cohort will launch once we reach 5 pre-registered participants. Pre-register for free to secure your interest!
+                        <strong>Quorum Required</strong>: This cohort will launch once we reach 5 pre-registered participants. Pre-register for free to secure your interest!
                     </div>
 
                     <form id="pre-reg-form" class="space-y-2.5">
@@ -164,7 +149,6 @@ const t = useTranslations(lang);
                             class="w-full justify-center text-center bg-theme-foreground text-bg-main font-serif font-medium text-xs py-2 px-4 rounded-lg hover:opacity-90 transition-opacity flex items-center gap-2 cursor-pointer"
                         >
                             <span>Pre-register for free</span>
-                            <span class="hidden animate-spin" id="reg-spinner">🌀</span>
                         </button>
                     </form>
 
@@ -199,7 +183,7 @@ const t = useTranslations(lang);
       e.preventDefault();
       
       const submitBtn = form.querySelector('button[type="submit"]');
-      const spinner = document.getElementById('reg-spinner');
+      const btnSpan = submitBtn.querySelector('span');
       const successBox = document.getElementById('pre-reg-success');
       const errorBox = document.getElementById('pre-reg-error');
       
@@ -209,7 +193,8 @@ const t = useTranslations(lang);
       
       // Start loading
       submitBtn.disabled = true;
-      spinner.classList.remove('hidden');
+      const originalText = btnSpan.textContent;
+      btnSpan.textContent = "Registering...";
       
       const formData = new FormData(form);
       const params = new URLSearchParams();
@@ -242,7 +227,8 @@ const t = useTranslations(lang);
         errorBox.classList.remove('hidden');
         submitBtn.disabled = false;
       } finally {
-        spinner.classList.add('hidden');
+        btnSpan.textContent = originalText;
+        submitBtn.disabled = false;
       }
     });
   }
