@@ -1,6 +1,6 @@
 ---
 title: "Cursus : Cybersécurité Modernisée (IA & Quantique)"
-subtitle: "L'alternative moderne de 190h à l'AEC traditionnelle"
+subtitle: "Une spécialisation intensive de 190h axée sur les technologies de rupture"
 excerpt: "Un cursus intensif conçu pour capitaliser sur vos bases en informatique et vous propulser vers les exigences de la cybersécurité moderne : automatisation IA, défense active et transition post-quantique."
 duration: "190 heures"
 format: "À distance"
@@ -16,7 +16,7 @@ publishDate: "2026-07-14"
 
 ## Pourquoi ce programme ?
 
-Ce programme a été spécifiquement conçu pour éliminer la friction et la lenteur des cursus académiques traditionnels (AEC de 570 heures). En capitalisant sur vos connaissances préalables en informatique et en intégrant dès le premier jour les outils d'intelligence artificielle ainsi que la cryptographie post-quantique, vous apprenez en **190 heures** ce qui nécessite habituellement des années de pratique sur le terrain.
+Ce programme a été conçu comme un accélérateur de compétences pour les professionnels et diplômés de la technologie. En capitalisant sur vos connaissances préalables en informatique et en intégrant dès le premier jour les outils d'intelligence artificielle ainsi que la cryptographie post-quantique, ce cursus de **190 heures** vous permet d'acquérir une maîtrise pratique avancée directement applicable aux nouvelles réalités de l'industrie.
 
 ---
 
