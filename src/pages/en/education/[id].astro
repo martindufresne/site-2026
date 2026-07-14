@@ -185,7 +185,8 @@ const t = useTranslations(lang);
 
   function initPreRegistration() {
     const form = document.getElementById('pre-reg-form');
-    if (!form) return;
+    if (!form || form.dataset.initialized === 'true') return;
+    form.dataset.initialized = 'true';
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -238,9 +239,6 @@ const t = useTranslations(lang);
       }
     });
   }
-
-  // Init on load
-  initPreRegistration();
 
   // Astro page transitions compatibility
   document.addEventListener('astro:page-load', initPreRegistration);
