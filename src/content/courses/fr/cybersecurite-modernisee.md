@@ -71,10 +71,10 @@ Le cursus est divisé en 5 blocs de compétences progressifs :
 
 ## Modèle de livraison et Laboratoires
 
-L'apprentissage est 100% orienté pratique grâce à trois environnements de lab :
-1. **Plateforme Cloud** (TryHackMe / HackTheBox Enterprise) : Accès direct à des machines de test (Kali Linux) dans le navigateur, prêt en 30 secondes.
-2. **Conteneurs Docker locaux** : Environnements pré-packagés contenant des LLMs locaux vulnérables et des librairies de cryptographie post-quantique.
-3. **Sandboxes AWS / Azure** : Pour simuler des infrastructures d'entreprise d'échelle réelle (Active Directory, SIEM, Pare-feu).
+L'apprentissage est 100% orienté pratique grâce à un **HomeLab local basé sur Docker** :
+* **Déploiement en un clic** : L'environnement complet se lance localement sur votre machine en une seule commande avec Docker Compose.
+* **Gratuit et accessible** : Aucune plateforme cloud externe ou abonnement payant tiers n'est requis pour les étudiants.
+* **Contenu du HomeLab** : Des conteneurs pré-configurés simulant des infrastructures d'attaque et de défense (LLMs locaux vulnérables aux prompt injections, simulateurs de clés quantiques, serveur de centralisation des logs et SIEM léger).
 
 ---
 
