@@ -1,12 +1,12 @@
 ---
-title: "Séminaire : Cryptographie Post-Quantique"
+title: "Cryptographie Post-Quantique"
 subtitle: "Préparez vos systèmes d'information à la transition quantum-safe"
-excerpt: "Un séminaire pratique de 16 heures conçu pour les développeurs et ingénieurs réseau afin de comprendre et d'implémenter les nouveaux algorithmes de chiffrement résistants aux ordinateurs quantiques."
-duration: "16 heures (2 jours)"
-format: "Séminaire pratique (Présentiel ou Webinaire)"
+excerpt: "Une formation pratique de 15 heures conçue pour les développeurs et ingénieurs réseau afin de comprendre et d'implémenter les nouveaux algorithmes de chiffrement résistants aux ordinateurs quantiques."
+duration: "15 heures (5 cours de 3h)"
+format: "À distance"
 difficulty: "Développeurs & Ingénieurs"
-priceUnique: "950 $ CAD"
-priceInstallments: "3 mensualités de 350 $ CAD"
+priceUnique: "450 $ CAD"
+priceInstallments: "3 mensualités de 150 $ CAD"
 stripeUniqueLink: "#"
 stripeInstallments6Link: "#"
 stripeInstallments12Link: "#"
@@ -16,27 +16,29 @@ publishDate: "2026-07-14"
 
 ## Pourquoi cette formation ?
 
-L'arrivée des ordinateurs quantiques menace directement les fondations de la sécurité informatique moderne (RSA, ECC, Diffie-Hellman). Ce séminaire intensif de 2 jours vous donne les outils théoriques et pratiques pour entamer dès aujourd'hui la transition vers les standards de cryptographie post-quantique (PQC) validés par le NIST.
+L'arrivée des ordinateurs quantiques menace directement les fondations de la sécurité informatique moderne (RSA, ECC, Diffie-Hellman). Cette formation intensive vous donne les outils théoriques et pratiques pour entamer dès aujourd'hui la transition vers les standards de cryptographie post-quantique (PQC) validés par le NIST.
 
 ---
 
-## Programme détaillé
+## Programme détaillé (5 cours de 3 heures)
 
-### Jour 1 : La menace quantique & Principes fondamentaux (8 heures)
-* **Matin** :
+* **Cours 1 : La menace quantique & Algorithmes fondamentaux**
   * Introduction à l'informatique quantique (Qubits, superposition, intrication).
   * L'algorithme de Shor et Grover : comment ils brisent le chiffrement asymétrique classique.
   * L'état de l'art technologique (IBM, Google) et la frise chronologique de la menace (Y2Q).
-* **Après-midi** :
-  * Présentation des grandes familles de cryptographie post-quantique :
-    * Cryptographie sur les réseaux (Lattice-based).
-    * Cryptographie basée sur les codes, multivariée, et signatures à base de hachage.
-  * Les nouveaux standards du NIST : ML-KEM (Kyber) et ML-DSA (Dilithium).
 
-### Jour 2 : Implémentation pratique & Hybridation (8 heures)
-* **Matin** :
-  * Travaux pratiques avec la bibliothèque **Open Quantum Safe (OQS)**.
-  * Compilation et intégration d'algorithmes post-quantiques dans vos environnements de développement (Go, Python, C/C++).
-* **Après-midi** :
-  * Architectures de transition : comment concevoir des protocoles de sécurité **hybrides** combinant chiffrement classique et post-quantique pour assurer une sécurité double.
-  * Audit et mise à jour de vos infrastructures de clés publiques (PKI), certificats X.509 et serveurs web (TLS 1.3 quantum-safe).
+* **Cours 2 : Mathématiques et standards du NIST**
+  * Présentation des grandes familles de cryptographie post-quantique (réseaux, codes, signatures).
+  * Les nouveaux standards officiels du NIST : ML-KEM (Kyber) et ML-DSA (Dilithium).
+
+* **Cours 3 : Pratique avec Open Quantum Safe (OQS)**
+  * Travaux pratiques avec la bibliothèque Open Quantum Safe.
+  * Compilation et intégration d'algorithmes post-quantiques dans vos environnements de développement.
+
+* **Cours 4 : Langages modernes et intégration**
+  * Implémentation pratique des nouveaux algorithmes de chiffrement en Go, Python et Rust.
+  * Gestion des clés et stockage des secrets dans des environnements cloud.
+
+* **Cours 5 : Architectures de transition & Hybridation**
+  * Conception de protocoles de sécurité hybrides (classique + post-quantique).
+  * Audit et mise à jour des infrastructures de clés (PKI), certificats X.509 et serveurs web (TLS 1.3 quantum-safe).

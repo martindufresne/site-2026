@@ -46,7 +46,7 @@ courses.sort((a, b) => {
         const { title, excerpt, duration, format, priceUnique, isFeatured } = course.data;
         
         return (
-          <article class={`flex flex-col justify-between p-6 border rounded-xl relative ${
+          <article class={`flex flex-col justify-between p-6 sm:p-8 pt-8 sm:pt-10 border rounded-xl relative ${
             isFeatured 
               ? 'border-theme-foreground bg-theme-foreground/5' 
               : 'border-dashed border-main/80'
@@ -59,7 +59,7 @@ courses.sort((a, b) => {
             
             <div class="space-y-4">
               <div>
-                <div class="flex items-center gap-2 text-xs uppercase tracking-wider text-main/60">
+                <div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-[10px] sm:text-xs uppercase tracking-wider text-main/60">
                   <span>{duration}</span>
                   <span>•</span>
                   <span>{format}</span>
