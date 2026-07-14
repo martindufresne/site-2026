@@ -119,15 +119,52 @@ const t = useTranslations(lang);
                 <hr class="border-zinc-200 dark:border-zinc-800" />
 
                 <!-- Registration Widget -->
-                <div class="space-y-3">
+                <div class="space-y-3" id="pre-reg-container">
                     <div class="bg-theme-foreground/5 text-theme-foreground rounded-lg p-3.5 text-xs leading-relaxed">
-                        📢 <strong>Quorum requis</strong> : Cette formation ne démarrera qu'à partir de 5 inscrits. Pré-inscrivez-vous pour réserver votre place sans payer !
+                        📢 <strong>Quorum requis</strong> : Cette formation ne démarrera qu'à partir de 5 inscrits. Pré-inscrivez-vous gratuitement !
                     </div>
 
-                    <!-- Temporary Action Button -->
-                    <Button href="/education/merci" class="w-full justify-center text-center">
-                        Se pré-inscrire gratuitement
-                    </Button>
+                    <form id="pre-reg-form" class="space-y-2.5">
+                        <input type="hidden" name="course" value={title} />
+                        <input type="hidden" name="locale" value="fr" />
+                        <div>
+                            <label for="reg-name" class="sr-only">Nom complet</label>
+                            <input 
+                                type="text" 
+                                id="reg-name" 
+                                name="name" 
+                                required 
+                                placeholder="Votre nom complet" 
+                                class="w-full text-xs px-3 py-2 border border-zinc-200 dark:border-zinc-800 rounded bg-transparent text-main focus:outline-none focus:border-theme-foreground transition-colors"
+                            />
+                        </div>
+                        <div>
+                            <label for="reg-email" class="sr-only">Adresse courriel</label>
+                            <input 
+                                type="email" 
+                                id="reg-email" 
+                                name="email" 
+                                required 
+                                placeholder="Votre adresse courriel" 
+                                class="w-full text-xs px-3 py-2 border border-zinc-200 dark:border-zinc-800 rounded bg-transparent text-main focus:outline-none focus:border-theme-foreground transition-colors"
+                            />
+                        </div>
+                        <button 
+                            type="submit" 
+                            class="w-full justify-center text-center bg-theme-foreground text-bg-main font-serif font-medium text-xs py-2 px-4 rounded-lg hover:opacity-90 transition-opacity flex items-center gap-2 cursor-pointer"
+                        >
+                            <span>Se pré-inscrire gratuitement</span>
+                            <span class="hidden animate-spin" id="reg-spinner">🌀</span>
+                        </button>
+                    </form>
+
+                    <div id="pre-reg-success" class="hidden bg-emerald-500/10 border border-emerald-500/20 text-emerald-800 dark:text-emerald-300 rounded-lg p-3.5 text-xs leading-normal">
+                        ✓ <strong>Merci !</strong> Votre pré-inscription a été enregistrée. Je vous contacterai dès que la cohorte sera validée.
+                    </div>
+
+                    <div id="pre-reg-error" class="hidden bg-rose-500/10 border border-rose-500/20 text-rose-800 dark:text-rose-300 rounded-lg p-3.5 text-xs leading-normal">
+                        ✗ <strong>Erreur.</strong> Un problème est survenu. Veuillez réessayer ou me contacter directement par courriel.
+                    </div>
 
                     <p class="text-[10px] text-main/50 text-center leading-normal">
                         Aucun débit sur votre carte. Vous recevrez une invitation de paiement une fois la cohorte confirmée.
@@ -137,3 +174,71 @@ const t = useTranslations(lang);
         </div>
     </div>
 </BaseLayout>
+
+<script is:inline>
+  // Insérez ici l'URL de votre Google Web App générée via Apps Script
+  // Exemple : const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/xxxx/exec";
+  const GOOGLE_SCRIPT_URL = ""; 
+
+  function initPreRegistration() {
+    const form = document.getElementById('pre-reg-form');
+    if (!form) return;
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const spinner = document.getElementById('reg-spinner');
+      const successBox = document.getElementById('pre-reg-success');
+      const errorBox = document.getElementById('pre-reg-error');
+      
+      // Reset status boxes
+      successBox.classList.add('hidden');
+      errorBox.classList.add('hidden');
+      
+      // Start loading
+      submitBtn.disabled = true;
+      spinner.classList.remove('hidden');
+      
+      const formData = new FormData(form);
+      const params = new URLSearchParams();
+      for (const [key, value] of formData.entries()) {
+        params.append(key, value);
+      }
+      
+      try {
+        if (!GOOGLE_SCRIPT_URL) {
+          // Simulation hors-ligne pour développement local
+          console.warn("GOOGLE_SCRIPT_URL n'est pas renseignée. Simulation de l'inscription en cours...");
+          await new Promise(resolve => setTimeout(resolve, 1200));
+        } else {
+          const response = await fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            body: params,
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded'
+            }
+          });
+          
+          if (!response.ok) throw new Error('Erreur de communication réseau.');
+        }
+        
+        // Success
+        form.classList.add('hidden');
+        successBox.classList.remove('hidden');
+      } catch (err) {
+        console.error("Erreur de pré-inscription :", err);
+        errorBox.classList.remove('hidden');
+        submitBtn.disabled = false;
+      } finally {
+        spinner.classList.add('hidden');
+      }
+    });
+  }
+
+  // Initialisation au chargement
+  initPreRegistration();
+
+  // Compatibilité avec les transitions de pages Astro (View Transitions)
+  document.addEventListener('astro:page-load', initPreRegistration);
+</script>
