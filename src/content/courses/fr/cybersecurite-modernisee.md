@@ -20,7 +20,7 @@ Ce programme a été conçu comme un accélérateur de compétences pour les pro
 
 ---
 
-## Une formule hybride unique (style TÉLUQ) — Bien plus que des vidéos passives
+## Une formule hybride unique — Bien plus que des vidéos passives
 
 Pour garantir votre succès et justifier la valeur de ce programme face à des cours en ligne passifs à bas coût, vous bénéficiez d'un accompagnement complet et interactif :
 * **Ateliers hebdomadaires en direct** : Des sessions interactives régulières pour poser vos questions en direct, approfondir les concepts complexes et débloquer les problèmes techniques rencontrés.
