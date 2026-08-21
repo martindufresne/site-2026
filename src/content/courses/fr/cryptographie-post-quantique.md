@@ -5,7 +5,7 @@ excerpt: "Une formation pratique de 15 heures conçue pour les développeurs et 
 duration: "15 heures (5 cours de 3h)"
 format: "Hybride"
 difficulty: "Développeurs & Ingénieurs"
-priceUnique: "295 $ CAD"
+priceUnique: "225 $ CAD"
 stripeUniqueLink: "#"
 stripeInstallments6Link: "#"
 stripeInstallments12Link: "#"

@@ -33,16 +33,11 @@ const courses = (await getCollection('courses'))
         const { title, excerpt, duration, format, priceUnique, isFeatured } = course.data;
         
         return (
-          <article class={`flex flex-col justify-between p-6 sm:p-8 pt-8 sm:pt-10 border rounded-xl relative ${
+          <article class={`flex flex-col justify-between p-6 sm:p-8 border rounded-xl relative ${
             isFeatured 
               ? 'border-theme-foreground bg-theme-foreground/5' 
               : 'border-dashed border-main/80'
           }`}>
-            {isFeatured && (
-              <span class="absolute -top-3 left-6 px-3 py-0.5 bg-theme-foreground text-bg-main text-[10px] uppercase tracking-widest font-semibold rounded-full">
-                À la une
-              </span>
-            )}
             
             <div class="space-y-4">
               <div>
@@ -73,6 +68,26 @@ const courses = (await getCollection('courses'))
           </article>
         );
       })}
+
+      <!-- Card Prochainement -->
+      <article class="flex flex-col justify-between p-6 sm:p-8 border border-dashed border-main/30 rounded-xl relative bg-main/5 opacity-85">
+        <div class="space-y-4">
+          <div>
+            <span class="text-[10px] uppercase tracking-wider text-main/50 block">Prochainement</span>
+            <h2 class="text-xl sm:text-2xl font-serif font-medium mt-1.5 text-main/80">
+              De nouveaux programmes en préparation
+            </h2>
+          </div>
+          <p class="text-sm leading-relaxed text-main/70">
+            D'autres formations s'ajouteront à ce catalogue prochainement. Restez à l'affût ou proposez-moi votre propre sujet d'intérêt.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-dashed border-main/10">
+          <a href="/contact" class="inline-block text-xs uppercase tracking-wider font-serif font-medium text-theme-foreground hover:opacity-80 transition-opacity">
+            Me proposer un sujet →
+          </a>
+        </div>
+      </article>
     </div>
 
     <!-- How it works (FAQ) -->
