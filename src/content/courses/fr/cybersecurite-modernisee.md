@@ -22,16 +22,16 @@ Ce programme a été conçu comme un accélérateur de compétences pour les pro
 
 ## Une formule hybride unique — Bien plus que des vidéos passives
 
-Pour garantir votre succès et justifier la valeur de ce programme face à des cours en ligne passifs à bas coût, vous bénéficiez d'un accompagnement complet et interactif :
-* **Ateliers hebdomadaires en direct** : Des sessions interactives régulières pour poser vos questions en direct, approfondir les concepts complexes et débloquer les problèmes techniques rencontrés.
-* **Correction individualisée de vos travaux** : Vos laboratoires pratiques de HomeLab sont révisés et commentés individuellement pour valider l'acquisition de vos compétences de terrain.
-* **Dynamique de cohorte** : Un accès exclusif à un canal Discord privé d'entraide pour échanger avec vos pairs, partager vos astuces et bâtir votre réseau professionnel.
+Pour garantir votre succès et vous offrir un accompagnement à forte valeur ajoutée, bien loin des cours en ligne passifs à bas coût, je vous propose un encadrement personnalisé :
+* **Ateliers interactifs en direct** : Des sessions en direct planifiées tout au long du cursus pour répondre de vive voix à vos questions, approfondir les concepts complexes et surmonter ensemble les défis techniques.
+* **Correction individualisée** : Je révise et commente personnellement chacun de vos laboratoires pratiques (HomeLab) afin de valider vos acquis et de vous guider pas à pas.
+* **Dynamique de cohorte** : Un accès exclusif à un canal Discord privé pour échanger avec vos pairs, partager vos découvertes et élargir votre réseau professionnel.
 
 ---
 
 ## Garantie « Satisfait ou Remboursé » sans risque
 
-Nous offrons une **garantie complète de satisfaction** : vous pouvez tester le cursus sans aucun risque. Si après la première semaine (incluant le premier atelier en direct) vous constatez que le format ou le contenu ne vous convient pas, vous serez intégralement remboursé sur simple demande, sans aucun justificatif requis.
+Je vous propose une **garantie complète de satisfaction** : vous pouvez tester le cursus en toute confiance. Si après la première semaine (incluant le premier atelier en direct) vous constatez que le format ou le contenu ne vous convient pas, vous serez intégralement remboursé sur simple demande, sans aucun justificatif requis.
 
 ---
 
