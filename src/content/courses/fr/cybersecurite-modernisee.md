@@ -3,10 +3,10 @@ title: "Cursus : Cybersécurité Modernisée (IA & Quantique)"
 subtitle: "Une spécialisation intensive de 190h axée sur les technologies de rupture"
 excerpt: "Un cursus intensif conçu pour capitaliser sur vos bases en informatique et vous propulser vers les exigences de la cybersécurité moderne : automatisation IA, défense active et transition post-quantique."
 duration: "190 heures"
-format: "À distance"
+format: "Hybride"
 difficulty: "Connaissances générales en informatique requises"
-priceUnique: "3 200 $ CAD (Tarif de lancement)"
-priceInstallments: "3 mensualités de 1 070 $, 6 de 535 $ ou 12 de 270 $"
+priceUnique: "425 $ CAD"
+priceInstallments: "3 mensualités de 142 $"
 stripeUniqueLink: "#"
 stripeInstallments6Link: "#"
 stripeInstallments12Link: "#"
@@ -17,6 +17,21 @@ publishDate: "2026-07-14"
 ## Pourquoi ce programme ?
 
 Ce programme a été conçu comme un accélérateur de compétences pour les professionnels et diplômés de la technologie. En capitalisant sur vos connaissances préalables en informatique et en intégrant dès le premier jour les outils d'intelligence artificielle ainsi que la cryptographie post-quantique, ce cursus de **190 heures** vous permet d'acquérir une maîtrise pratique avancée directement applicable aux nouvelles réalités de l'industrie.
+
+---
+
+## Une formule hybride unique (style TÉLUQ) — Bien plus que des vidéos passives
+
+Pour garantir votre succès et justifier la valeur de ce programme face à des cours en ligne passifs à bas coût, vous bénéficiez d'un accompagnement complet et interactif :
+* **Ateliers hebdomadaires en direct** : Des sessions interactives régulières pour poser vos questions en direct, approfondir les concepts complexes et débloquer les problèmes techniques rencontrés.
+* **Correction individualisée de vos travaux** : Vos laboratoires pratiques de HomeLab sont révisés et commentés individuellement pour valider l'acquisition de vos compétences de terrain.
+* **Dynamique de cohorte** : Un accès exclusif à un canal Discord privé d'entraide pour échanger avec vos pairs, partager vos astuces et bâtir votre réseau professionnel.
+
+---
+
+## Garantie « Satisfait ou Remboursé » sans risque
+
+Nous offrons une **garantie complète de satisfaction** : vous pouvez tester le cursus sans aucun risque. Si après la première semaine (incluant le premier atelier en direct) vous constatez que le format ou le contenu ne vous convient pas, vous serez intégralement remboursé sur simple demande, sans aucun justificatif requis.
 
 ---
 
