@@ -15,7 +15,7 @@ translationSlug: resilience-through-loss
 
 ## L'informatique actuelle est une forteresse de verre
 
-Depuis des décennies, nous bâtissons des systèmes informatiques comme des cathédrales : massives, rigides et terrifiées par la moindre fissure. Dans ce paradigme, une donnée corrompue est un échec, et un processus qui s'arrête est une erreur. 
+Depuis dess décennies, nous bâtissons des systèmes informatiques comme des cathédrales : massives, rigides et terrifiées par la moindre fissure. Dans ce paradigme, une donnée corrompue est un échec, et un processus qui s'arrête est une erreur. 
 
 Mais la nature, elle, ne construit pas de forteresses. Elle construit des **organismes**.
 
