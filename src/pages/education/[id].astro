@@ -6,7 +6,7 @@ import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 
 export async function getStaticPaths() {
     const courses = (await getCollection('courses'))
-        .filter((course) => course.id.startsWith('fr/'));
+        .filter((course) => course.id.startsWith('fr/') && !course.data.isDraft);
     
     return courses.map((course) => {
         const cleanId = course.id.replace(/^fr\//, '');

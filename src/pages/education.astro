@@ -10,7 +10,7 @@ const t = useTranslations(lang);
 // Fetch all courses in French, sorting featured ones first, then newest first
 const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000;
 const courses = (await getCollection('courses'))
-    .filter((course) => course.id.startsWith('fr/'))
+    .filter((course) => course.id.startsWith('fr/') && !course.data.isDraft)
     .sort((a, b) => {
         if (a.data.isFeatured && !b.data.isFeatured) return -1;
         if (!a.data.isFeatured && b.data.isFeatured) return 1;

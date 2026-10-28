@@ -62,6 +62,7 @@ const courses = defineCollection({
         stripeInstallments6Link: z.string().optional(),
         stripeInstallments12Link: z.string().optional(),
         isFeatured: z.boolean().default(false),
+        isDraft: z.boolean().default(false),
         publishDate: z.coerce.date().optional(),
         seo: seoSchema.optional()
     })

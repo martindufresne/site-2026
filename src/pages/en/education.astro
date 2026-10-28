@@ -9,11 +9,11 @@ const t = useTranslations(lang);
 
 // Fetch all courses. Look for English files first; fallback to French if none exist.
 const allCourses = await getCollection('courses');
-let courses = allCourses.filter((course) => course.id.startsWith('en/'));
+let courses = allCourses.filter((course) => course.id.startsWith('en/') && !course.data.isDraft);
 const isFallback = courses.length === 0;
 
 if (isFallback) {
-    courses = allCourses.filter((course) => course.id.startsWith('fr/'));
+    courses = allCourses.filter((course) => course.id.startsWith('fr/') && !course.data.isDraft);
 }
 
 // Sort courses: featured ones first, then newest first

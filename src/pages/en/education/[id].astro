@@ -7,7 +7,7 @@ import { getLangFromUrl, useTranslations } from '../../../i18n/utils';
 export async function getStaticPaths() {
     // Map French courses to English routes as a fallback since they are only offered in French
     const courses = (await getCollection('courses'))
-        .filter((course) => course.id.startsWith('fr/'));
+        .filter((course) => course.id.startsWith('fr/') && !course.data.isDraft);
     
     return courses.map((course) => {
         const cleanId = course.id.replace(/^fr\//, '');

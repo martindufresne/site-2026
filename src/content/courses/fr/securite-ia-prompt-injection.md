@@ -11,6 +11,7 @@ stripeUniqueLink: "#"
 stripeInstallments6Link: "#"
 stripeInstallments12Link: "#"
 isFeatured: false
+isDraft: true
 publishDate: "2026-07-14"
 ---
 
