@@ -17,7 +17,7 @@ publishDate: "2026-10-28"
 
 Dépendre d'APIs de modèles fermés dans le cloud pose des défis majeurs : coûts exponentiels, risques de confidentialité des données sensibles, latence imprévisible et dépendance stratégique. L'écosystème open-source (Llama, Mistral, Qwen, DeepSeek) permet désormais d'exécuter et d'adapter des modèles d'une puissance remarquable directement sur votre matériel.
 
-Cette formation intensive de **30 heures (10 sessions de 3 heures)** vous apprend à maîtriser l'ensemble du cycle de vie d'un modèle local : du dimensionnement matériel au serving haute performance en production avec vLLM, en passant par la quantification extrême et le fine-tuning rapide par **QLoRA** et **Unsloth**. La formation utilise une **infrastructure 100 % ouverte et sans frais d'API**.
+Cette formation intensive de **30 heures (10 sessions de 3 heures)** vous apprend à maîtriser l'ensemble du cycle de vie d'un modèle local : du dimensionnement matériel au serving haute performance en production avec vLLM, en passant par la quantification extrême et le fine-tuning rapide par **QLoRA** et **Unsloth**. La formation utilise une **infrastructure 100 % ouverte et sans frais d'API**, assurant une souveraineté numérique totale conforme aux exigences de confidentialité (**Loi 25 au Québec**, LPRPDE, RGPD).
 
 ---
 

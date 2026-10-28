@@ -43,23 +43,24 @@ const courses = (await getCollection('courses'))
               ? 'border-theme-foreground bg-theme-foreground/5' 
               : 'border-dashed border-main/80'
           }`}>
-            {isNew && (
-              <span 
-                class="new-course-badge absolute -top-3 left-6 px-3 py-0.5 bg-theme-foreground text-bg-main text-[10px] uppercase tracking-widest font-semibold rounded-full shadow-sm"
-                data-publish-date={publishDate ? new Date(publishDate).toISOString() : ''}
-              >
-                Nouvelle formation
-              </span>
-            )}
-            
             <div class="space-y-4">
               <div>
-                <div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-[10px] sm:text-xs uppercase tracking-wider text-main/60">
-                  <span>{duration}</span>
-                  <span>•</span>
-                  <span>{format}</span>
+                <div class="flex items-center justify-between gap-3 mb-2">
+                  <div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-[10px] sm:text-xs uppercase tracking-wider text-main/60">
+                    <span>{duration}</span>
+                    <span>•</span>
+                    <span>{format}</span>
+                  </div>
+                  {isNew && (
+                    <span 
+                      class="new-course-badge shrink-0 px-2.5 py-0.5 text-[10px] uppercase tracking-wider font-medium rounded-full bg-muted text-main border border-main/30"
+                      data-publish-date={publishDate ? new Date(publishDate).toISOString() : ''}
+                    >
+                      Nouvelle formation
+                    </span>
+                  )}
                 </div>
-                <h2 class="text-xl sm:text-2xl font-serif font-medium mt-1.5 text-main">
+                <h2 class="text-xl sm:text-2xl font-serif font-medium text-main">
                   {title}
                 </h2>
               </div>
@@ -120,16 +121,29 @@ const courses = (await getCollection('courses'))
           </p>
         </div>
         <div>
-          <h3 class="font-serif font-medium text-lg mb-2">3. Paiement & Options d'étalement</h3>
+          <h3 class="font-serif font-medium text-lg mb-2">3. Facturation officielle & Paiement</h3>
           <p class="text-main/80">
-            Le règlement s'effectue via une interface Stripe sécurisée. Selon la durée du programme, vous avez le choix entre un paiement unique ou des mensualités étalées sur 3, 6 ou 12 mois pour amortir l'investissement.
+            Le règlement s'effectue via une interface Stripe sécurisée (en un versement ou échelonné selon le cursus). Une facture officielle avec mentions d'entreprise et taxes est automatiquement émise pour vos comptes de dépenses ou budgets de formation employeur (notamment admissible à la Loi sur les compétences au Québec).
           </p>
         </div>
         <div>
           <h3 class="font-serif font-medium text-lg mb-2">4. Accès et documents de bienvenue</h3>
           <p class="text-main/80">
-            Une fois le paiement validé, vous recevrez automatiquement vos invitations d'agenda Google Calendar (incluant le lien Google Meet de la classe) ainsi que vos accès complets aux laboratoires virtuels cloud et aux lectures de préparation.
+            Une fois le paiement validé, vous recevrez automatiquement vos invitations d'agenda Google Calendar (incluant le lien Google Meet de la classe) ainsi que vos accès complets aux laboratoires virtuels et aux lectures de préparation.
           </p>
+        </div>
+
+        <!-- Callout Cohorte Entreprise -->
+        <div class="md:col-span-2 mt-4 p-6 rounded-xl border border-dashed border-main/40 bg-muted/40 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+          <div class="space-y-1">
+            <h3 class="font-serif font-medium text-lg text-main">Besoin d'une cohorte privée en entreprise ?</h3>
+            <p class="text-xs text-main/80 leading-relaxed max-w-2xl">
+              Vous souhaitez former une équipe complète de développeurs, d'analystes ou d'ingénieurs dans votre organisation ? Nous pouvons organiser une cohorte privée sur mesure, adaptée à vos contextes d'affaires et politiques de sécurité (Loi 25, données souveraines, intégration locale).
+            </p>
+          </div>
+          <Button href="/contact" class="text-xs px-5 py-2.5 shrink-0">
+            Demander une cohorte privée
+          </Button>
         </div>
       </div>
     </div>

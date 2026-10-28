@@ -56,23 +56,24 @@ courses.sort((a, b) => {
               ? 'border-theme-foreground bg-theme-foreground/5' 
               : 'border-dashed border-main/80'
           }`}>
-            {isNew && (
-              <span 
-                class="new-course-badge absolute -top-3 left-6 px-3 py-0.5 bg-theme-foreground text-bg-main text-[10px] uppercase tracking-widest font-semibold rounded-full shadow-sm"
-                data-publish-date={publishDate ? new Date(publishDate).toISOString() : ''}
-              >
-                New Course
-              </span>
-            )}
-            
             <div class="space-y-4">
               <div>
-                <div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-[10px] sm:text-xs uppercase tracking-wider text-main/60">
-                  <span>{duration}</span>
-                  <span>•</span>
-                  <span>{format}</span>
+                <div class="flex items-center justify-between gap-3 mb-2">
+                  <div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-[10px] sm:text-xs uppercase tracking-wider text-main/60">
+                    <span>{duration}</span>
+                    <span>•</span>
+                    <span>{format}</span>
+                  </div>
+                  {isNew && (
+                    <span 
+                      class="new-course-badge shrink-0 px-2.5 py-0.5 text-[10px] uppercase tracking-wider font-medium rounded-full bg-muted text-main border border-main/30"
+                      data-publish-date={publishDate ? new Date(publishDate).toISOString() : ''}
+                    >
+                      New Course
+                    </span>
+                  )}
                 </div>
-                <h2 class="text-xl sm:text-2xl font-serif font-medium mt-1.5 text-main">
+                <h2 class="text-xl sm:text-2xl font-serif font-medium text-main">
                   {title}
                 </h2>
               </div>
@@ -133,9 +134,9 @@ courses.sort((a, b) => {
           </p>
         </div>
         <div>
-          <h3 class="font-serif font-medium text-lg mb-2">3. Payment & Installment Options</h3>
+          <h3 class="font-serif font-medium text-lg mb-2">3. Official Invoicing & Payment</h3>
           <p class="text-main/80">
-            Payments are processed securely via Stripe. Depending on the duration of the program, you can choose between a one-time payment or flexible monthly installments spread over 3, 6, or 12 months.
+            Payments are processed securely via Stripe (single payment or installment plans depending on the course). An official business invoice with complete tax details is issued for expense reports and employer professional training budgets.
           </p>
         </div>
         <div>
@@ -143,6 +144,19 @@ courses.sort((a, b) => {
           <p class="text-main/80">
             Once payment is validated, you will automatically receive your Google Calendar invitations (including the Google Meet links for the class) along with welcome emails containing virtual lab accesses and preparation documents.
           </p>
+        </div>
+
+        <!-- Corporate Cohort Callout -->
+        <div class="md:col-span-2 mt-4 p-6 rounded-xl border border-dashed border-main/40 bg-muted/40 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+          <div class="space-y-1">
+            <h3 class="font-serif font-medium text-lg text-main">Need a Private Corporate Cohort?</h3>
+            <p class="text-xs text-main/80 leading-relaxed max-w-2xl">
+              Looking to train a full team of developers, analysts, or engineers within your company? We can organize a private dedicated cohort tailored to your business stack and internal data compliance policies (Law 25, sovereign local models).
+            </p>
+          </div>
+          <Button href="/en/contact" class="text-xs px-5 py-2.5 shrink-0">
+            Request Private Cohort
+          </Button>
         </div>
       </div>
     </div>

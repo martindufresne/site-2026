@@ -17,7 +17,7 @@ publishDate: "2026-10-28"
 
 Les simples chatbots d'assistance textuelle ne suffisent plus. En entreprise, la véritable valeur ajoutée réside dans les **agents autonomes** capables de percevoir un besoin, de décomposer un problème, d'appeler des outils métiers (*Tool Calling*), d'interroger des bases de connaissances internes (*RAG*) et d'exécuter des flux complets en collaboration.
 
-Cette formation de **30 heures (10 sessions de 3 heures)** vous guide pas à pas dans la création d'architectures d'agents opérationnelles, sécurisées et intégrées aux flux de travail réels. L'ensemble de la formation repose sur une **infrastructure 100 % ouverte et locale (0,00 $ de frais d'API)**, garantissant la confidentialité absolue de vos données d'affaires.
+Cette formation de **30 heures (10 sessions de 3 heures)** vous guide pas à pas dans la création d'architectures d'agents opérationnelles, sécurisées et intégrées aux flux de travail réels. L'ensemble de la formation repose sur une **infrastructure 100 % ouverte et locale (0,00 $ de frais d'API)**, garantissant la confidentialité absolue de vos données d'affaires et la pleine conformité avec les réglementations sur la vie privée (**Loi 25 au Québec**, LPRPDE, RGPD).
 
 ---
 
