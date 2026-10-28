@@ -16,11 +16,14 @@ if (isFallback) {
     courses = allCourses.filter((course) => course.id.startsWith('fr/'));
 }
 
-// Sort courses: featured ones first
+// Sort courses: featured ones first, then newest first
+const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000;
 courses.sort((a, b) => {
     if (a.data.isFeatured && !b.data.isFeatured) return -1;
     if (!a.data.isFeatured && b.data.isFeatured) return 1;
-    return 0;
+    const dateA = a.data.publishDate ? new Date(a.data.publishDate).getTime() : 0;
+    const dateB = b.data.publishDate ? new Date(b.data.publishDate).getTime() : 0;
+    return dateB - dateA;
 });
 ---
 
@@ -43,7 +46,9 @@ courses.sort((a, b) => {
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       {courses.map((course) => {
         const cleanId = course.id.replace(/^(fr|en)\//, '');
-        const { title, excerpt, duration, format, priceUnique, isFeatured } = course.data;
+        const { title, excerpt, duration, format, priceUnique, isFeatured, publishDate } = course.data;
+        const publishTime = publishDate ? new Date(publishDate).getTime() : 0;
+        const isNew = publishTime > 0 && (Date.now() - publishTime < THIRTY_DAYS_MS);
         
         return (
           <article class={`flex flex-col justify-between p-6 sm:p-8 border rounded-xl relative ${
@@ -51,6 +56,14 @@ courses.sort((a, b) => {
               ? 'border-theme-foreground bg-theme-foreground/5' 
               : 'border-dashed border-main/80'
           }`}>
+            {isNew && (
+              <span 
+                class="new-course-badge absolute -top-3 left-6 px-3 py-0.5 bg-theme-foreground text-bg-main text-[10px] uppercase tracking-widest font-semibold rounded-full shadow-sm"
+                data-publish-date={publishDate ? new Date(publishDate).toISOString() : ''}
+              >
+                New Course
+              </span>
+            )}
             
             <div class="space-y-4">
               <div>
@@ -134,4 +147,23 @@ courses.sort((a, b) => {
       </div>
     </div>
   </section>
+
+  <script>
+    function checkNewCourseBadges() {
+      const badges = document.querySelectorAll('.new-course-badge[data-publish-date]');
+      const now = Date.now();
+      const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000;
+      badges.forEach((badge) => {
+        const pubDate = badge.getAttribute('data-publish-date');
+        if (pubDate) {
+          const time = new Date(pubDate).getTime();
+          if (now - time > THIRTY_DAYS_MS) {
+            badge.remove();
+          }
+        }
+      });
+    }
+    checkNewCourseBadges();
+    document.addEventListener('astro:page-load', checkNewCourseBadges);
+  </script>
 </BaseLayout>
