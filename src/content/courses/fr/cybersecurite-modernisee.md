@@ -5,8 +5,8 @@ excerpt: "Un cursus intensif conçu pour capitaliser sur vos bases en informatiq
 duration: "190 heures"
 format: "Hybride"
 difficulty: "Connaissances générales en informatique requises"
-priceUnique: "990 $ CAD"
-priceInstallments: "3 mensualités de 330 $, 6 de 165 $ ou 10 de 99 $"
+priceUnique: "525 $ CAD"
+priceInstallments: "3 mensualités de 175 $ (ou 5 de 105 $)"
 stripeUniqueLink: "#"
 stripeInstallments6Link: "#"
 stripeInstallments12Link: "#"
@@ -16,7 +16,9 @@ publishDate: "2026-07-14"
 
 ## Pourquoi ce programme ?
 
-Ce programme a été conçu comme un accélérateur de compétences pour les professionnels et diplômés de la technologie. En capitalisant sur vos connaissances préalables en informatique et en intégrant dès le premier jour les outils d'intelligence artificielle ainsi que la cryptographie post-quantique, ce cursus de **190 heures** vous permet d'acquérir une maîtrise pratique avancée directement applicable aux nouvelles réalités de l'industrie.
+Ce programme a été conçu comme un accélérateur de compétences pour les professionnels, pigistes et diplômés en informatique. En capitalisant sur vos connaissances préalables et en intégrant dès le premier jour les outils d'intelligence artificielle ainsi que la cryptographie post-quantique, ce cursus intensif de **190 heures** vous permet d'acquérir une maîtrise pratique avancée directement applicable sur le terrain.
+
+> **Tarif spécial — Première cohorte de lancement** : Pour cette cohorte inaugurale, le cursus est offert au tarif préférentiel de **525 $ CAD** (au lieu du tarif régulier ultérieur de 990 $), avec possibilité d'étalement en 3 mensualités de 175 $ ou 5 de 105 $. Les places sont limitées afin de garantir un encadrement individualisé de haute qualité.
 
 ---
 
