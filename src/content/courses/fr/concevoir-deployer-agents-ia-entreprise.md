@@ -72,7 +72,7 @@ Je vous propose une **garantie complète de satisfaction** : vous pouvez tester 
 ## Programme détaillé (10 sessions de 3 heures)
 
 * **Session 1 — De l'IA Générative aux Agents Autonomes**
-  * Limites des simples chatbots et émergence de la boucle *Perception $\rightarrow$ Réflexion $\rightarrow$ Action*.
+  * Limites des simples chatbots et émergence de la boucle *Perception → Réflexion → Action*.
   * Découverte de la mécanique ReAct sans jargon abstrait.
   * Installation d'Ollama en local et lancement d'un premier agent autonome avec CrewAI pointant sur `localhost:11434`.
   * Configuration fine du rôle (*Role*), de l'objectif (*Goal*) et du contexte d'expertise (*Backstory*).
@@ -118,7 +118,7 @@ Je vous propose une **garantie complète de satisfaction** : vous pouvez tester 
 
 * **Session 8 — Connecteurs Métier : Webhooks, Formulaires & Notifications**
   * Intégration des agents dans les canaux quotidiens des équipes (Slack, Teams, e-mails, formulaires web).
-  * Conception d'un flux d'entreprise de bout en bout : soumission d'un formulaire $\rightarrow$ analyse et triage par l'agent local $\rightarrow$ routage automatisé de la réponse.
+  * Conception d'un flux d'entreprise de bout en bout : soumission d'un formulaire → analyse et triage par l'agent local → routage automatisé de la réponse.
   * *Livrable :* Un pipeline complet d'automatisation d'entreprise s'exécutant en arrière-plan sans frais d'abonnement SaaS.
 
 * **Session 9 — Évaluation, Débogage & Observabilité**

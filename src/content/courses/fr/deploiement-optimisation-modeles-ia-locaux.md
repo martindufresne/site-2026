@@ -108,7 +108,7 @@ Je vous propose une **garantie complète de satisfaction** : vous pouvez tester 
 
 * **Session 7 — La Mécanique LoRA & QLoRA décortiquée**
   * Pourquoi le Full Fine-Tuning est inefficace pour les petites équipes face aux adaptateurs.
-  * Théorie LoRA : matrices de décomposition $A$ et $B$, rang $r$, scaling $\alpha$, target modules.
+  * Théorie LoRA : matrices de décomposition A et B, rang r, facteur d'échelle alpha, modules cibles (target modules).
   * QLoRA : format NF4, double quantification et optimiseurs paginés (*paged optimizers*).
   * Configuration de la stack d'entraînement Hugging Face (`peft`, `bitsandbytes`, `trl`) et définition d'un `LoraConfig` optimisé pour votre VRAM.
   * *Livrable :* Script de configuration LoRA testé et validé sans dépassement mémoire (*Out Of Memory*).
