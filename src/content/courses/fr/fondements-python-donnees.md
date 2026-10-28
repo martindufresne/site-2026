@@ -45,10 +45,18 @@ Je vous propose une **garantie complète de satisfaction** : vous pouvez tester 
 
 ---
 
+## Prérequis & Matériel requis
+
+* **Compétences :** Débutants complets bienvenus. Aucune expérience préalable en programmation requise. Savoir simplement manipuler des fichiers, un clavier, une souris et naviguer sur le web.
+* **Matériel requis :** N'importe quel ordinateur standard (Mac, Windows ou Linux) capable d'installer le gestionnaire moderne **`uv`** et un éditeur de code gratuit (**VS Code**). Connexion Internet stable.
+* **Ce qui n'est PAS requis :** Aucun ordinateur surpuissant requis, aucune carte graphique dédiée, et aucun prérequis mathématique.
+
+---
+
 ## Programme détaillé (Répartition sur 8 semaines)
 
 * **Semaines 1 & 2 : Pourquoi programmer & Fondations de base**
-  * Installation de Python 3 et configuration de l'éditeur de code (VS Code).
+  * Prise en main de l'outillage moderne (`uv`, Python 3) et configuration de l'éditeur de code (VS Code).
   * Variables, expressions, opérateurs et types de données de base.
   * Exécution conditionnelle (`if`, `else`, `elif`) et logique booléenne.
 

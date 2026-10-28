@@ -35,6 +35,17 @@ Je vous propose une **garantie complète de satisfaction** : vous pouvez tester 
 
 ---
 
+## Prérequis & Matériel requis
+
+* **Compétences :** Connaissances générales de l'environnement informatique (systèmes de fichiers, navigation web, aisance générale avec un ordinateur). Forte motivation pour l'expérimentation pratique sur le terrain.
+* **Matériel requis :**
+  * Ordinateur Mac, Windows ou Linux récent avec **au moins 16 Go de RAM** (pour exécuter avec fluidité les conteneurs Docker de votre HomeLab local).
+  * 40 Go d'espace disque disponible et droits d'administration sur votre machine (pour installer Docker, Wireshark et les outils d'audit).
+  * Connexion Internet stable.
+* **Ce qui n'est PAS requis :** Aucun diplôme préalable en informatique requis, aucune compétence antérieure en cybersécurité, ni connaissances en mathématiques avancées.
+
+---
+
 ## Structure du Programme (190 Heures)
 
 Le cursus est divisé en 5 blocs de compétences progressifs :

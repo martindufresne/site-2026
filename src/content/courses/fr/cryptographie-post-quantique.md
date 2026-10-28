@@ -34,6 +34,14 @@ Je vous propose une **garantie complète de satisfaction** : vous pouvez tester 
 
 ---
 
+## Prérequis & Matériel requis
+
+* **Compétences :** Bases en développement logiciel (savoir lire et manipuler du code en Python, Go ou C/Rust) et aisance générale avec la ligne de commande (Bash ou PowerShell).
+* **Matériel requis :** Ordinateur récent Mac, Linux ou Windows (avec WSL2), 16 Go de RAM recommandé et droits d'administration pour compiler des bibliothèques C natives (`liboqs`).
+* **Ce qui n'est PAS requis :** Aucun diplôme de recherche en mathématiques pures ni connaissances préalables en physique ou mécanique quantique.
+
+---
+
 ## Programme détaillé (5 cours de 3 heures)
 
 * **Cours 1 : La menace quantique & Algorithmes fondamentaux**
