@@ -1,8 +1,8 @@
 ---
 title: "Fondements Python & Données"
 subtitle: "Maîtrisez les bases de la programmation et de l'analyse de données"
-excerpt: "Une formation intensive et pratique de 60 heures répartie sur 8 semaines pour acquérir des bases solides en Python, manipuler les structures de données, utiliser SQL et bâtir un pipeline ETL complet."
-duration: "60 heures (8 semaines)"
+excerpt: "Une formation intensive et pratique de 24 heures répartie sur 8 semaines pour acquérir des bases solides en Python, manipuler les structures de données, utiliser SQL et bâtir un pipeline ETL complet."
+duration: "24 heures (8 semaines)"
 format: "Hybride"
 difficulty: "Débutants complets (aucun prérequis)"
 priceUnique: "325 $ CAD"
@@ -31,7 +31,7 @@ Pour garantir votre succès et vous offrir un accompagnement à forte valeur ajo
 
 ## Structure et Charge de travail (8 semaines)
 
-Le programme propose un engagement estimé à **60 heures au total** (soit environ 7 à 8 heures par semaine), réparti sur 8 semaines :
+Le programme propose un parcours de **24 heures d'ateliers et d'accompagnement direct** réparti sur 8 semaines, complété par du travail pratique personnel :
 
 * **Rencontres et Ateliers (En direct)** : Sessions interactives régulières dédiées au débogage en direct, au live coding, aux revues de code et aux présentations finales de projets.
 * **Capsules et Lectures (Asynchrone)** : Visionnement des capsules vidéo théoriques et lecture des notes de cours détaillées, à votre propre rythme.
