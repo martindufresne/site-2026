@@ -18,8 +18,6 @@ publishDate: "2026-07-14"
 
 Ce programme a été conçu comme un accélérateur de compétences pour les professionnels, pigistes et diplômés en informatique. En capitalisant sur vos connaissances préalables et en intégrant dès le premier jour les outils d'intelligence artificielle ainsi que la cryptographie post-quantique, ce cursus intensif de **190 heures** vous permet d'acquérir une maîtrise pratique avancée directement applicable sur le terrain.
 
-> **Tarif Pionnier — Cohorte #1 (Limité aux 10 premiers inscrits)** : Pour cette toute première cohorte, le cursus est offert au tarif spécial pionnier de **525 $ CAD** (ou 3 mensualités de 175 $), alors que le tarif régulier des cohortes suivantes est de **990 $ CAD**. Ce tarif préférentiel est consenti en échange de vos retours d'expérience et témoignages en fin de parcours. Les places sont strictement limitées afin de garantir un encadrement individualisé de très haute qualité.
-
 ---
 
 ## Une formule hybride unique — Bien plus que des vidéos passives
