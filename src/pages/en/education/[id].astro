@@ -119,7 +119,18 @@ const t = useTranslations(lang);
                         <strong>Quorum Required</strong>: This cohort will launch once we reach 5 pre-registered participants. Pre-register for free to secure your interest!
                     </div>
 
-                    <form id="pre-reg-form" class="space-y-2.5">
+                    <form 
+                        id="pre-reg-form" 
+                        name="pre-registration" 
+                        method="POST" 
+                        data-netlify="true" 
+                        netlify-honeypot="bot-field"
+                        class="space-y-2.5"
+                    >
+                        <input type="hidden" name="form-name" value="pre-registration" />
+                        <p class="hidden">
+                            <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+                        </p>
                         <input type="hidden" name="course" value={title} />
                         <input type="hidden" name="locale" value="en" />
                         <div>
@@ -213,21 +224,27 @@ const t = useTranslations(lang);
       }
       
       try {
-        if (!GOOGLE_SCRIPT_URL) {
-          // Offline simulation for local dev
-          console.warn("GOOGLE_SCRIPT_URL is not set. Simulating registration...");
-          await new Promise(resolve => setTimeout(resolve, 1200));
-        } else {
-          const response = await fetch(GOOGLE_SCRIPT_URL, {
+        // 1. Send to Netlify Forms (stores directly in Netlify dashboard)
+        const netlifyPromise = fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: params.toString()
+        }).catch(err => console.warn('Netlify form submission error:', err));
+
+        // 2. Send to Google Apps Script (in no-cors mode to bypass CORS issues)
+        let googlePromise = Promise.resolve();
+        if (GOOGLE_SCRIPT_URL) {
+          googlePromise = fetch(GOOGLE_SCRIPT_URL, {
             method: 'POST',
-            body: params,
+            mode: 'no-cors',
             headers: {
               'Content-Type': 'application/x-www-form-urlencoded'
-            }
-          });
-          
-          if (!response.ok) throw new Error('Network communication error.');
+            },
+            body: params
+          }).catch(err => console.warn('Google Script submission error:', err));
         }
+
+        await Promise.all([netlifyPromise, googlePromise]);
         
         // Success
         form.classList.add('hidden');
