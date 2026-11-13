@@ -225,7 +225,7 @@ const t = useTranslations(lang);
       
       try {
         // 1. Send to Netlify Forms (stores directly in Netlify dashboard)
-        const netlifyPromise = fetch('/', {
+        const netlifyPromise = fetch('/__forms.html', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: params.toString()
